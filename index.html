@@ -360,7 +360,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .waybill-footer-note{padding:10px 18px;background:#fff;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
 
 /* 7. Tracking Modal: Refined Dialog */
-.tracking-modal-backdrop{position:fixed;inset:0;background:rgba(12,28,34,.75);backdrop-filter:blur(4px);z-index:999;display:none;align-items:center;justify-content:center;padding:18px}
+section, [id]{scroll-margin-top:125px}
+#simulador{scroll-margin-top:135px}
+.tracking-modal-backdrop{position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;height:100vh!important;background:rgba(12,28,34,.82)!important;backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important;z-index:999999!important;display:none;align-items:center;justify-content:center;padding:18px;margin:0!important}
 .tracking-modal{background:#fff;border-radius:12px;width:100%;max-width:540px;box-shadow:0 24px 60px rgba(0,0,0,.25);overflow:hidden;animation:modal-pop .25s ease-out}
 .modal-header{background:var(--ink);color:#fff;padding:20px 24px;display:flex;align-items:center;justify-content:space-between}
 .modal-header h3{font-size:18px;font-weight:800;color:#fff}
@@ -498,7 +500,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <span class="brand-fallback"><span class="orange-letter">B</span>-EXPRESS</span>
   </a>
   <nav class="main-nav" id="mainNav" aria-label="Menu principal">
-    <a href="#como-funciona">Como funciona</a><a href="#simulador">Simulador</a><a href="#negocios">Para negócios</a><a href="#zonas">Zonas</a><a href="#testemunhos">Avaliações</a><a href="#contactos">Contactos</a><a href="#perguntas">Dúvidas</a>
+    <a href="#como-funciona">Como funciona</a><a href="#negocios">Para negócios</a><a href="#zonas">Zonas de entrega</a><a href="#simulador">Simulador</a><a href="#testemunhos">Avaliações</a><a href="#contactos">Contactos</a><a href="#perguntas">Dúvidas</a>
   </nav>
   <a class="btn btn-primary header-cta" href="#pedido">Pedir entrega <span aria-hidden="true">↗</span></a>
   <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false" type="button">☰ Menu</button>
@@ -534,7 +536,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
         <p class="tracking-strip-sub">Acompanha o percurso do estafeta em Luanda ou solicita o status e comprovativo assinado diretamente ao despachante.</p>
       </div>
       <div class="tracking-strip-box">
-        <form class="tracking-strip-form" id="heroTrackingForm">
+        <form class="tracking-strip-form" id="heroTrackingForm" onsubmit="event.preventDefault(); const c=document.getElementById('heroTrackCode').value; openTracking(c||'BX-9842'); return false;">
           <div class="tracking-strip-input-wrap">
             <svg class="tracking-search-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             <input type="text" id="heroTrackCode" class="tracking-strip-input" placeholder="Digita o código de envio (ex: BX-9842) ou teu contacto" autocomplete="off">
@@ -543,8 +545,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
         </form>
         <div class="tracking-strip-samples">
           <span class="samples-label">Códigos de demonstração activos:</span>
-          <button type="button" class="btn-sample-code" data-code="BX-9842">BX-9842 (Em Rota · Talatona ➔ Maianga)</button>
-          <button type="button" class="btn-sample-code" data-code="BX-7710">BX-7710 (Entregue com Comprovativo)</button>
+          <button type="button" class="btn-sample-code" data-code="BX-9842" onclick="openTracking('BX-9842')">BX-9842 (Em Rota · Talatona ➔ Maianga)</button>
+          <button type="button" class="btn-sample-code" data-code="BX-7710" onclick="openTracking('BX-7710')">BX-7710 (Entregue com Comprovativo)</button>
         </div>
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid #edf2ee;display:flex;align-items:center;justify-content:center;gap:12px;font-size:12px;color:var(--muted);flex-wrap:wrap">
           <span>🔒 <strong>Comprovativo Digital:</strong> Assinatura e foto de entrega enviadas no WhatsApp</span>
@@ -912,46 +914,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 </div></div></section>
 
 
-<!-- MODAL DE RASTREIO INTERATIVO -->
-<div class="tracking-modal-backdrop" id="trackingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none">
-  <div class="tracking-modal">
-    <div class="modal-header">
-      <div>
-        <h3 id="modalTitle">Rastreio de Encomenda</h3>
-        <p>Código: <strong id="modalCodeDisplay" style="color:#fff">BX-9842</strong></p>
-      </div>
-      <button type="button" class="modal-close-btn" id="btnCloseModal" aria-label="Fechar">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-summary-box">
-        <div class="modal-summary-item">
-          <strong>Origem</strong>
-          <span id="modalOrigin">Talatona (Cond. Rosalinda)</span>
-        </div>
-        <div class="modal-summary-item">
-          <strong>Destino</strong>
-          <span id="modalDest">Ingombota (Edifício Escom)</span>
-        </div>
-        <div class="modal-summary-item">
-          <strong>Estafeta</strong>
-          <span id="modalCourier">Mateus Silva (Mota BX-04)</span>
-        </div>
-        <div class="modal-summary-item">
-          <strong>Previsão</strong>
-          <span id="modalEta" style="color:var(--orange-dark)">~18 minutos</span>
-        </div>
-      </div>
-      <div class="timeline" id="modalTimeline">
-        <!-- Linha do tempo dinâmica -->
-      </div>
-    </div>
-    <div class="modal-footer">
-      <span style="font-size:12px;color:var(--muted)">Dúvidas sobre o pedido?</span>
-      <a href="https://wa.me/244955920680?text=Ol%C3%A1%20B-Express%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20rastreio%20BX-9842" id="modalWaBtn" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 16px">Falar no WhatsApp</a>
-    </div>
-  </div>
-</div>
-
 </main>
 
 <footer class="footer" id="contactos"><div class="wrap">
@@ -1165,7 +1127,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     const data=Object.fromEntries(['tipo','nome','telefone','origem','destino','zona','item'].map(k=>[k,(form.elements.namedItem(k)?.value||'').trim()]));
     const required=['nome','telefone','origem','destino','item'];const missing=required.find(k=>!data[k]);
     if(missing){error.textContent='Preenche os campos assinalados com *.';form.elements.namedItem(missing).focus();return;}
-    if(data.telefone.replace(/\D/g,'').length<9){error.textContent='Indica um número válido de Angola com 9 dígitos (ex.: 923 000 000).';form.elements.namedItem('telefone').focus();return;}form.elements.namedItem('telefone').focus();return;}
+    if(data.telefone.replace(/\D/g,'').length<9){error.textContent='Indica um número válido de Angola com 9 dígitos (ex.: 923 000 000).';form.elements.namedItem('telefone').focus();return;}
     const message=['Olá, B-Express. Gostaria de consultar uma entrega.','',
       'Tipo de pedido: '+(data.tipo==='negocio'?'Para o meu negócio':'Encomenda pontual'),
       'Nome/loja: '+data.nome,'Contacto: '+data.telefone,'Local de recolha: '+data.origem,
@@ -1649,5 +1611,47 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 
 })();
 </script>
+
+
+<!-- MODAL DE RASTREIO INTERATIVO -->
+<div class="tracking-modal-backdrop" id="trackingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none">
+  <div class="tracking-modal">
+    <div class="modal-header">
+      <div>
+        <h3 id="modalTitle">Rastreio de Encomenda</h3>
+        <p>Código: <strong id="modalCodeDisplay" style="color:#fff">BX-9842</strong></p>
+      </div>
+      <button type="button" class="modal-close-btn" id="btnCloseModal" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-summary-box">
+        <div class="modal-summary-item">
+          <strong>Origem</strong>
+          <span id="modalOrigin">Talatona (Cond. Rosalinda)</span>
+        </div>
+        <div class="modal-summary-item">
+          <strong>Destino</strong>
+          <span id="modalDest">Ingombota (Edifício Escom)</span>
+        </div>
+        <div class="modal-summary-item">
+          <strong>Estafeta</strong>
+          <span id="modalCourier">Mateus Silva (Mota BX-04)</span>
+        </div>
+        <div class="modal-summary-item">
+          <strong>Previsão</strong>
+          <span id="modalEta" style="color:var(--orange-dark)">~18 minutos</span>
+        </div>
+      </div>
+      <div class="timeline" id="modalTimeline">
+        <!-- Linha do tempo dinâmica -->
+      </div>
+    </div>
+    <div class="modal-footer">
+      <span style="font-size:12px;color:var(--muted)">Dúvidas sobre o pedido?</span>
+      <a href="https://wa.me/244955920680?text=Ol%C3%A1%20B-Express%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20rastreio%20BX-9842" id="modalWaBtn" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 16px">Falar no WhatsApp</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
