@@ -484,6 +484,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     .hero-media:after{background:linear-gradient(180deg,#101f27 0%,rgba(16,31,39,.96) 55%,rgba(16,31,39,.75) 85%,rgba(16,31,39,.4) 100%) !important}
   }
 
+
+  .hero-foot:before{content:"";width:8px;height:8px;background:#10b981 !important;border-radius:50%;margin-top:6px;flex-shrink:0;box-shadow:0 0 0 0 rgba(16,185,129,.7);animation:pulse-green 2s infinite}
+  @keyframes modal-pop{from{opacity:0;transform:scale(0.96)}to{opacity:1;transform:scale(1)}}
+
 </style>
 </head>
 <body>
@@ -506,7 +510,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
    <h1 class="display" aria-label="Tens uma encomenda? Faz o pedido aqui."><span class="typing-text" id="heroTyping" aria-hidden="true">Tens uma encomenda?</span> <em aria-hidden="true">Faz o pedido aqui.</em></h1>
    <p class="lead">Para uma entrega pontual ou para os pedidos da tua loja: indica-nos onde recolher e para onde enviar. A equipa confirma contigo os detalhes antes de avançar.</p>
    <div class="hero-actions"><a class="btn btn-primary" href="#pedido" data-customer="pessoal">Enviar uma encomenda <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#negocios">Entregas para o meu negócio <span aria-hidden="true">→</span></a></div>
-   <p class="hero-foot"><span class="pulse-dot" style="display:inline-block;vertical-align:middle;margin-right:6px"></span><strong>Estafetas em rota em Luanda</strong> · Recolha média em ~35 min. Confirmação directa com a equipa.</p>
+   <p class="hero-foot"><strong>Estafetas em rota em Luanda</strong> · Recolha média em ~35 min. Confirmação directa com a equipa.</p>
  </div>
  <div class="hero-media" id="heroMedia">
    <div class="fallback"><div class="fallback-copy"><strong>A cidade<br>não pára.</strong><p>Uma encomenda de cada vez, Luanda em movimento.</p></div></div>
@@ -1244,7 +1248,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   // ==========================================
   window.lastSimulatedPrice = '3.000 Kz';
 
-  function openTrackingEnhanced(code) {
+  function openTracking(code) {
     const rawCode = (code || 'BX-9842').trim();
     const cleanCode = rawCode.toUpperCase();
     
@@ -1308,7 +1312,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   }
 
   // Update openTracking global reference
-  window.openTracking = openTrackingEnhanced;
+  window.openTracking = openTracking;
 
 
   function closeTracking() {
