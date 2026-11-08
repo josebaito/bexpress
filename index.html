@@ -16,7 +16,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:115px}
-body{margin:0;background:var(--off);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.57;-webkit-font-smoothing:antialiased}
+html,body{overflow-x:hidden;max-width:100%}body{margin:0;background:var(--off);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.57;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}
 button{cursor:pointer}img{display:block;max-width:100%}h1,h2,h3,p{margin:0}
 h1,h2,h3{font-family:var(--display);line-height:1.09;letter-spacing:-.045em}
@@ -33,15 +33,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .btn-outline{border-color:var(--ink);color:var(--ink);background:transparent}.btn-outline:hover{background:#e6eae6}
 .text-link{display:inline-flex;gap:12px;align-items:center;font-weight:750;border-bottom:1px solid currentColor;padding:6px 0}.text-link:hover{color:var(--orange)}
 /* Cabeçalho: tamanho de leitura e marca revistos */
-.header{height:103px;background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
-.header-row{height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.brand{display:inline-flex;align-items:center;min-width:220px;max-width:245px;position:relative;line-height:1;flex:0 1 auto}
+.header{height:94px;background:#fff;position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
+.header-row{height:100%;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:inline-flex;align-items:center;min-width:170px;max-width:205px;position:relative;line-height:1;flex:0 0 auto}
 .brand .official-logo{width:auto;height:auto;max-width:245px;max-height:75px;object-fit:contain;object-position:left center}
 .brand-fallback{font-family:var(--display);font-weight:900;font-size:29px;letter-spacing:-.065em;white-space:nowrap;color:var(--ink)}
 .brand-fallback .orange-letter{color:var(--orange)}
 .brand .official-logo{display:none}.brand .official-logo.is-loaded{display:block}.brand .official-logo.is-loaded+.brand-fallback{display:none}
-.main-nav{display:flex;align-items:center;gap:31px;justify-content:center;flex-wrap:nowrap}
-.main-nav a{font-size:16px;font-weight:650;white-space:nowrap;letter-spacing:-.01em;padding:10px 0;position:relative}
+.main-nav{display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:nowrap;flex:1 1 auto}
+.main-nav a{font-size:14px;font-weight:650;white-space:nowrap;letter-spacing:-.01em;padding:6px 0;position:relative}
 .main-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:4px;height:2px;background:var(--orange);transition:right .2s}
 .main-nav a:hover:after,.main-nav a:focus-visible:after{right:0}
 .header-cta{flex:0 0 auto;min-height:49px;padding:10px 17px;font-size:15px}
@@ -500,7 +500,7 @@ section, [id]{scroll-margin-top:125px}
     <span class="brand-fallback"><span class="orange-letter">B</span>-EXPRESS</span>
   </a>
   <nav class="main-nav" id="mainNav" aria-label="Menu principal">
-    <a href="#como-funciona">Como funciona</a><a href="#negocios">Para negócios</a><a href="#zonas">Zonas de entrega</a><a href="#simulador">Simulador</a><a href="#testemunhos">Avaliações</a><a href="#contactos">Contactos</a><a href="#perguntas">Dúvidas</a>
+    <a href="#como-funciona">Como funciona</a><a href="#negocios">Negócios</a><a href="#zonas">Zonas</a><a href="#simulador">Simulador</a><a href="#testemunhos">Avaliações</a><a href="#perguntas">Dúvidas</a><a href="#contactos">Contactos</a>
   </nav>
   <a class="btn btn-primary header-cta" href="#pedido">Pedir entrega <span aria-hidden="true">↗</span></a>
   <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false" type="button">☰ Menu</button>
@@ -1018,6 +1018,46 @@ section, [id]{scroll-margin-top:125px}
   </div>
 </div></footer>
 <div class="mobile-action"><a class="btn btn-primary" href="#pedido">Pedir uma entrega <span aria-hidden="true">↗</span></a></div>
+<!-- MODAL DE RASTREIO INTERATIVO -->
+<div class="tracking-modal-backdrop" id="trackingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none">
+  <div class="tracking-modal">
+    <div class="modal-header">
+      <div>
+        <h3 id="modalTitle">Rastreio de Encomenda</h3>
+        <p>Código: <strong id="modalCodeDisplay" style="color:#fff">BX-9842</strong></p>
+      </div>
+      <button type="button" class="modal-close-btn" id="btnCloseModal" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-summary-box">
+        <div class="modal-summary-item">
+          <strong>Origem</strong>
+          <span id="modalOrigin">Talatona (Cond. Rosalinda)</span>
+        </div>
+        <div class="modal-summary-item">
+          <strong>Destino</strong>
+          <span id="modalDest">Ingombota (Edifício Escom)</span>
+        </div>
+        <div class="modal-summary-item">
+          <strong>Estafeta</strong>
+          <span id="modalCourier">Mateus Silva (Mota BX-04)</span>
+        </div>
+        <div class="modal-summary-item">
+          <strong>Previsão</strong>
+          <span id="modalEta" style="color:var(--orange-dark)">~18 minutos</span>
+        </div>
+      </div>
+      <div class="timeline" id="modalTimeline">
+        <!-- Linha do tempo dinâmica -->
+      </div>
+    </div>
+    <div class="modal-footer">
+      <span style="font-size:12px;color:var(--muted)">Dúvidas sobre o pedido?</span>
+      <a href="https://wa.me/244955920680?text=Ol%C3%A1%20B-Express%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20rastreio%20BX-9842" id="modalWaBtn" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 16px">Falar no WhatsApp</a>
+    </div>
+  </div>
+</div>
+
 <script>
 (()=>{
 
@@ -1210,88 +1250,105 @@ section, [id]{scroll-margin-top:125px}
   // ==========================================
   window.lastSimulatedPrice = '3.000 Kz';
 
+  function getModalEls() {
+    return {
+      modal: document.getElementById('trackingModal'),
+      codeDisplay: document.getElementById('modalCodeDisplay'),
+      origin: document.getElementById('modalOrigin'),
+      dest: document.getElementById('modalDest'),
+      courier: document.getElementById('modalCourier'),
+      eta: document.getElementById('modalEta'),
+      timeline: document.getElementById('modalTimeline'),
+      waBtn: document.getElementById('modalWaBtn')
+    };
+  }
+
   function openTracking(code) {
+    const els = getModalEls();
     const rawCode = (code || 'BX-9842').trim();
     const cleanCode = rawCode.toUpperCase();
     
-    // Check known demo codes
     if (trackingData[cleanCode]) {
       const data = trackingData[cleanCode];
-      modalCodeDisplay.textContent = data.code;
-      modalOrigin.textContent = data.origin;
-      modalDest.textContent = data.dest;
-      modalCourier.textContent = data.courier;
-      modalEta.textContent = data.eta;
-      if (modalWaBtn) {
-        modalWaBtn.href = 'https://wa.me/244955920680?text=' + encodeURIComponent('Olá B-Express, gostaria de informações sobre a encomenda ' + data.code);
+      if (els.codeDisplay) els.codeDisplay.textContent = data.code;
+      if (els.origin) els.origin.textContent = data.origin;
+      if (els.dest) els.dest.textContent = data.dest;
+      if (els.courier) els.courier.textContent = data.courier;
+      if (els.eta) els.eta.textContent = data.eta;
+      if (els.waBtn) {
+        els.waBtn.href = 'https://wa.me/244955920680?text=' + encodeURIComponent('Olá B-Express, gostaria de informações sobre a encomenda ' + data.code);
       }
-      modalTimeline.innerHTML = data.steps.map(s => `
-        <div class="timeline-step ${s.done ? 'step-done' : ''} ${s.current ? 'step-current' : ''}">
-          <div class="step-point"></div>
-          <div>
-            <div class="step-title">${s.title}</div>
-            <div class="step-time">${s.time}</div>
+      if (els.timeline) {
+        els.timeline.innerHTML = data.steps.map(s => `
+          <div class="timeline-step ${s.done ? 'step-done' : ''} ${s.current ? 'step-current' : ''}">
+            <div class="step-point"></div>
+            <div>
+              <div class="step-title">${s.title}</div>
+              <div class="step-time">${s.time}</div>
+            </div>
           </div>
-        </div>
-      `).join('');
+        `).join('');
+      }
     } else {
-      // Fallback concierge realista para qualquer outro número ou código digitado
-      modalCodeDisplay.textContent = rawCode;
-      modalOrigin.textContent = 'Luanda (A consultar)';
-      modalDest.textContent = 'Zona do Destinatário';
-      modalCourier.textContent = 'Central de Despacho B-Express';
-      modalEta.textContent = 'Em verificação com estafeta';
-      if (modalWaBtn) {
-        modalWaBtn.href = 'https://wa.me/244955920680?text=' + encodeURIComponent('Olá B-Express, gostaria de consultar o estado e localização da minha entrega (Código/Contacto: ' + rawCode + ')');
+      if (els.codeDisplay) els.codeDisplay.textContent = rawCode;
+      if (els.origin) els.origin.textContent = 'Luanda (A consultar)';
+      if (els.dest) els.dest.textContent = 'Zona do Destinatário';
+      if (els.courier) els.courier.textContent = 'Central de Despacho B-Express';
+      if (els.eta) els.eta.textContent = 'Em verificação com estafeta';
+      if (els.waBtn) {
+        els.waBtn.href = 'https://wa.me/244955920680?text=' + encodeURIComponent('Olá B-Express, gostaria de consultar o estado e localização da minha entrega (Código/Contacto: ' + rawCode + ')');
       }
-      modalTimeline.innerHTML = `
-        <div class="timeline-step step-done">
-          <div class="step-point"></div>
-          <div>
-            <div class="step-title">Pedido Registado no Sistema</div>
-            <div class="step-time">Referência: ${rawCode}</div>
+      if (els.timeline) {
+        els.timeline.innerHTML = `
+          <div class="timeline-step step-done">
+            <div class="step-point"></div>
+            <div>
+              <div class="step-title">Pedido Registado no Sistema</div>
+              <div class="step-time">Referência: ${rawCode}</div>
+            </div>
           </div>
-        </div>
-        <div class="timeline-step step-current">
-          <div class="step-point"></div>
-          <div>
-            <div class="step-title">Estafeta em Rota / Comunicação Directa</div>
-            <div class="step-time">Para obter a localização exata, clica no botão abaixo</div>
+          <div class="timeline-step step-current">
+            <div class="step-point"></div>
+            <div>
+              <div class="step-title">Estafeta em Rota / Comunicação Directa</div>
+              <div class="step-time">Para obter a localização exata, clica no botão abaixo</div>
+            </div>
           </div>
-        </div>
-        <div class="timeline-step">
-          <div class="step-point"></div>
-          <div>
-            <div class="step-title">Entrega com Comprovativo Assinado</div>
-            <div class="step-time">Recibo digital enviado no WhatsApp</div>
+          <div class="timeline-step">
+            <div class="step-point"></div>
+            <div>
+              <div class="step-title">Entrega com Comprovativo Assinado</div>
+              <div class="step-time">Recibo digital enviado no WhatsApp</div>
+            </div>
           </div>
-        </div>
-      `;
+        `;
+      }
     }
 
-    trackingModal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    if (els.modal) {
+      els.modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
   }
 
-  // Update openTracking global reference
   window.openTracking = openTracking;
 
-
   function closeTracking() {
-    trackingModal.style.display = 'none';
+    const modal = document.getElementById('trackingModal');
+    if (modal) modal.style.display = 'none';
     document.body.style.overflow = '';
   }
 
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeTracking);
-  if (trackingModal) {
-    trackingModal.addEventListener('click', (e) => {
-      if (e.target === trackingModal) closeTracking();
-    });
-  }
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && trackingModal && trackingModal.style.display === 'flex') {
+  window.closeTracking = closeTracking;
+
+  document.addEventListener('click', (e) => {
+    if (e.target && (e.target.id === 'btnCloseModal' || e.target.id === 'trackingModal')) {
       closeTracking();
     }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeTracking();
   });
 
   // Tracking form submit
@@ -1612,46 +1669,6 @@ section, [id]{scroll-margin-top:125px}
 })();
 </script>
 
-
-<!-- MODAL DE RASTREIO INTERATIVO -->
-<div class="tracking-modal-backdrop" id="trackingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none">
-  <div class="tracking-modal">
-    <div class="modal-header">
-      <div>
-        <h3 id="modalTitle">Rastreio de Encomenda</h3>
-        <p>Código: <strong id="modalCodeDisplay" style="color:#fff">BX-9842</strong></p>
-      </div>
-      <button type="button" class="modal-close-btn" id="btnCloseModal" aria-label="Fechar">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-summary-box">
-        <div class="modal-summary-item">
-          <strong>Origem</strong>
-          <span id="modalOrigin">Talatona (Cond. Rosalinda)</span>
-        </div>
-        <div class="modal-summary-item">
-          <strong>Destino</strong>
-          <span id="modalDest">Ingombota (Edifício Escom)</span>
-        </div>
-        <div class="modal-summary-item">
-          <strong>Estafeta</strong>
-          <span id="modalCourier">Mateus Silva (Mota BX-04)</span>
-        </div>
-        <div class="modal-summary-item">
-          <strong>Previsão</strong>
-          <span id="modalEta" style="color:var(--orange-dark)">~18 minutos</span>
-        </div>
-      </div>
-      <div class="timeline" id="modalTimeline">
-        <!-- Linha do tempo dinâmica -->
-      </div>
-    </div>
-    <div class="modal-footer">
-      <span style="font-size:12px;color:var(--muted)">Dúvidas sobre o pedido?</span>
-      <a href="https://wa.me/244955920680?text=Ol%C3%A1%20B-Express%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20rastreio%20BX-9842" id="modalWaBtn" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 16px">Falar no WhatsApp</a>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
