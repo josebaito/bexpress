@@ -260,168 +260,177 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:600px){#zonas .zone-list{grid-template-columns:1fr;gap:12px;margin-top:29px}#zonas .zone-card{min-height:192px;padding:20px 22px 18px}#zonas .zone-card-head{margin-bottom:14px}.footer-social{align-items:flex-end}}
 @media(prefers-reduced-motion:reduce){#zonas .zone-card{transition:none}#zonas .zone-card:hover{transform:none}}
 
-/* Top Live Status Bar */
-.top-status-bar{background:#0e1e24;color:#d7e5e7;font-size:13px;padding:9px 0;border-bottom:1px solid #23373f}
-.top-status-inner{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
-.top-status-left{display:flex;align-items:center;gap:10px}
-.pulse-indicator{width:9px;height:9px;background:#10b981;border-radius:50%;display:inline-block;box-shadow:0 0 0 0 rgba(16,185,129,0.7);animation:pulse-green 2s infinite}
-@keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(16,185,129,0.7)}70%{box-shadow:0 0 0 8px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
-.top-status-bar strong{color:#fff}
-.status-badge-secure{display:inline-flex;align-items:center;gap:6px;color:#a3bec3;font-size:12px;font-weight:600}
-@media(max-width:700px){.status-badge-secure{display:none}}
 
-/* Widget Rastreio Hero */
-.tracking-widget{margin-top:28px;padding:16px 20px;background:#fff;border:1px solid #d3ddd7;border-radius:6px;width:100%;max-width:530px;box-shadow:0 6px 18px rgba(17,38,46,0.06)}
-.tracking-label{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:8px}
-.tracking-input-wrap{display:flex;gap:8px;position:relative}
-.tracking-search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none}
-.tracking-input-wrap input{flex:1;height:44px;padding:8px 12px 8px 38px;border:1px solid #cbd5cf;border-radius:4px;font-size:14px;color:var(--ink);background:#fbfbf9}
-.tracking-input-wrap input:focus{border-color:var(--orange);outline:none;background:#fff}
-.btn-tracking{min-height:44px;padding:0 18px;font-size:14px;background:var(--ink);color:#fff;border-radius:4px;border:none;font-weight:700;transition:background .2s}
-.btn-tracking:hover{background:var(--orange-dark)}
-.tracking-samples{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:12px;color:var(--muted);flex-wrap:wrap}
-.btn-sample-code{border:1px dashed #b7c7c1;background:#f3f6f4;color:var(--ink);border-radius:3px;padding:2px 8px;font-size:11px;font-weight:700;cursor:pointer}
-.btn-sample-code:hover{border-color:var(--orange);color:var(--orange-dark)}
+/* ==========================================================================
+   B-EXPRESS MASTERPIECE DESIGN SYSTEM ENHANCEMENTS
+   Cohesive, High-End Editorial Aesthetics matching --ink, --sand, --orange
+   ========================================================================== */
 
-/* Modal de Rastreio */
-.tracking-modal-backdrop{position:fixed;inset:0;background:rgba(12,28,34,0.78);backdrop-filter:blur(3px);z-index:999;display:none;align-items:center;justify-content:center;padding:18px}
-.tracking-modal-backdrop.is-active{display:flex}
-.tracking-modal{background:#fff;border-radius:8px;width:100%;max-width:540px;box-shadow:0 20px 45px rgba(0,0,0,0.25);overflow:hidden;animation:modal-pop .25s ease-out}
-@keyframes modal-pop{from{opacity:0;transform:scale(0.96)}to{opacity:1;transform:scale(1)}}
-.modal-header{background:var(--ink);color:#fff;padding:18px 22px;display:flex;align-items:center;justify-content:space-between}
-.modal-title-group h3{font-size:19px;font-weight:800;color:#fff}
-.modal-title-group p{font-size:12px;color:#a9c0c6;margin-top:2px}
-.modal-close-btn{background:transparent;border:none;color:#fff;font-size:24px;line-height:1;cursor:pointer;opacity:0.8}
+/* 1. Header Operational Live Pill */
+.header-row{display:flex;align-items:center;justify-content:space-between;gap:28px}
+.header-status{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);background:var(--sand);padding:6px 14px;border-radius:20px;border:1px solid var(--line);font-weight:550;letter-spacing:.01em}
+.header-status strong{color:var(--ink);font-weight:750}
+.pulse-dot{width:8px;height:8px;border-radius:50%;background:#10b981;display:inline-block;box-shadow:0 0 0 0 rgba(16,185,129,.7);animation:pulse-green 2s infinite;flex-shrink:0}
+@keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(16,185,129,.7)}70%{box-shadow:0 0 0 7px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+@media(max-width:1050px){.header-status{display:none}}
+
+/* 2. Hero Tracking Bar: Seamless, sleek dock integrated with hero section */
+.hero-tracker-dock{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px;box-shadow:0 12px 32px rgba(16,35,44,.05);max-width:540px;position:relative}
+.tracker-dock-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.tracker-dock-head span{font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--orange-dark)}
+.tracker-dock-head a{font-size:12px;color:var(--muted);text-decoration:none;font-weight:600}
+.tracker-dock-head a:hover{color:var(--ink);text-decoration:underline}
+.tracker-form{display:flex;gap:8px;position:relative}
+.tracker-input-wrap{position:relative;flex:1}
+.tracker-input-wrap svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--muted);pointer-events:none}
+.tracker-input{width:100%;height:46px;padding:8px 12px 8px 38px;background:#fcfdfc;border:1px solid var(--line);border-radius:6px;font-size:14px;color:var(--ink);font-weight:550;transition:border-color .2s,box-shadow .2s}
+.tracker-input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(235,94,40,.12);background:#fff}
+.tracker-btn{height:46px;padding:0 20px;background:var(--ink);color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:750;letter-spacing:.03em;cursor:pointer;transition:background .2s,transform .15s;white-space:nowrap}
+.tracker-btn:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.tracker-samples{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:11.5px;color:var(--muted);flex-wrap:wrap}
+.tracker-pill{background:var(--sand);border:1px solid var(--line);color:var(--ink);font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;cursor:pointer;transition:all .15s}
+.tracker-pill:hover{border-color:var(--orange);color:var(--orange-dark);background:#fff}
+
+/* 3. Stats Band: High-Impact Editorial Social Proof */
+.section-stats{background:var(--ink);color:#fff;padding-block:54px 50px;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.stat-card{border-left:2px solid var(--orange);padding-left:22px;display:flex;flex-direction:column;justify-content:center}
+.stat-num{font-family:var(--display);font-size:clamp(32px,3.8vw,48px);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1;font-feature-settings:"tnum"}
+.stat-label{font-size:13px;color:#9cb3b8;font-weight:550;margin-top:9px;line-height:1.45;letter-spacing:.02em}
+@media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:30px 20px}}
+@media(max-width:520px){.stats-grid{grid-template-columns:1fr;gap:24px}}
+
+/* 4. Interactive Freight Simulator Card */
+.sim-container{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 36px rgba(16,35,44,.05);margin-top:40px;overflow:hidden}
+.sim-header{padding:30px 36px 24px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff 0%,#fafcfa 100%)}
+.sim-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(235,94,40,.1);color:var(--orange-dark);font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:8px}
+.sim-header h3{font-family:var(--display);font-size:clamp(22px,2.4vw,28px);font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.sim-header p{font-size:14.5px;color:var(--muted);margin-top:4px}
+.sim-body{display:grid;grid-template-columns:1.35fr 1fr;align-items:stretch}
+.sim-form-col{padding:32px 36px;display:flex;flex-direction:column;gap:20px}
+.sim-field label{display:block;font-size:12.5px;font-weight:750;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+.sim-select{width:100%;height:48px;padding:0 14px;background:#fbfcfb;border:1px solid var(--line);border-radius:6px;font-size:14.5px;color:var(--ink);font-weight:600;transition:border-color .2s,box-shadow .2s;cursor:pointer}
+.sim-select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(235,94,40,.12);background:#fff}
+.sim-quote-card{background:var(--ink);color:#fff;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--line)}
+.quote-top-tag{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#9cb3b8}
+.quote-price-wrap{margin-top:14px}
+.quote-price-label{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#78939a;font-weight:700}
+.quote-price-val{font-family:var(--display);font-size:clamp(34px,4vw,44px);font-weight:850;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-top:4px}
+.quote-meta-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px 0;margin:18px 0;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
+.quote-meta-item strong{display:block;font-size:11px;color:#78939a;text-transform:uppercase;letter-spacing:.05em}
+.quote-meta-item span{font-size:14px;font-weight:750;color:#fff;margin-top:3px;display:inline-block}
+.quote-apply-btn{width:100%;height:48px;background:var(--orange);color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:750;letter-spacing:.02em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,transform .15s}
+.quote-apply-btn:hover{background:var(--orange-dark);transform:translateY(-1px)}
+@media(max-width:850px){
+  .sim-body{grid-template-columns:1fr}
+  .sim-quote-card{border-left:none;border-top:1px solid var(--line)}
+  .sim-form-col,.sim-header,.sim-quote-card{padding:24px}
+}
+
+/* 5. Testimonials: Editorial Trust Showcase */
+.section-testi{background:#f3f6f3;padding-block:90px;border-top:1px solid var(--line)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.testi-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px 28px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 6px 20px rgba(16,35,44,.03);transition:transform .2s,border-color .2s}
+.testi-card:hover{transform:translateY(-3px);border-color:var(--orange)}
+.testi-stars{color:#f59e0b;font-size:15px;letter-spacing:3px;margin-bottom:14px}
+.testi-quote{font-size:15px;color:var(--ink);line-height:1.65;font-weight:500;margin-bottom:24px}
+.testi-author-row{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid #eef2ef}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;display:inline-grid;place-items:center;font-weight:800;font-size:13px;flex-shrink:0}
+.testi-info strong{display:block;font-size:14px;font-weight:750;color:var(--ink)}
+.testi-info span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+@media(max-width:960px){.testi-grid{grid-template-columns:1fr}}
+
+/* 6. Request Section: Clean 2-column layout with Live Waybill Note on Left */
+.request-left-wrap{display:flex;flex-direction:column;gap:26px}
+.digital-waybill{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(16,35,44,.04)}
+.waybill-top{background:var(--ink);color:#fff;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.waybill-top-tag{font-size:11px;font-weight:800;letter-spacing:.08em;color:#9cb3b8}
+.waybill-top-code{font-family:monospace;font-size:12px;background:rgba(255,255,255,.14);padding:2px 8px;border-radius:4px;color:#fff;font-weight:700}
+.waybill-content{padding:18px;background:#fafbfa;display:flex;flex-direction:column;gap:11px;font-size:13px}
+.waybill-route-strip{background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.route-stop strong{display:block;font-size:10px;text-transform:uppercase;color:var(--muted);letter-spacing:.05em}
+.route-stop span{font-size:13px;font-weight:750;color:var(--ink);display:block;margin-top:2px}
+.route-divider-arrow{color:var(--orange);font-size:16px;font-weight:800}
+.waybill-row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px dashed #e2e8e4;padding-bottom:7px}
+.waybill-row span:first-child{color:var(--muted);font-size:12px}
+.waybill-row span:last-child{color:var(--ink);font-weight:700}
+.waybill-price-highlight{background:#fff4eb;border:1px solid #ffd8bf;padding:10px 14px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.waybill-price-highlight span{font-size:12px;font-weight:750;color:var(--orange-dark)}
+.waybill-price-highlight strong{font-size:18px;font-weight:850;color:var(--ink)}
+.waybill-footer-note{padding:10px 18px;background:#fff;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+
+/* 7. Tracking Modal: Refined Dialog */
+.tracking-modal-backdrop{position:fixed;inset:0;background:rgba(12,28,34,.75);backdrop-filter:blur(4px);z-index:999;display:none;align-items:center;justify-content:center;padding:18px}
+.tracking-modal{background:#fff;border-radius:12px;width:100%;max-width:540px;box-shadow:0 24px 60px rgba(0,0,0,.25);overflow:hidden;animation:modal-pop .25s ease-out}
+.modal-header{background:var(--ink);color:#fff;padding:20px 24px;display:flex;align-items:center;justify-content:space-between}
+.modal-header h3{font-size:18px;font-weight:800;color:#fff}
+.modal-header p{font-size:12px;color:#a9c0c6;margin-top:2px}
+.modal-close-btn{background:transparent;border:none;color:#fff;font-size:26px;line-height:1;cursor:pointer;opacity:.8;padding:0 6px}
 .modal-close-btn:hover{opacity:1}
-.modal-body{padding:22px}
-.tracking-summary-card{background:#f8faf9;border:1px solid #e1e8e4;border-radius:6px;padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
-.summary-item strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.summary-item span{font-size:14px;font-weight:750;color:var(--ink)}
+.modal-body{padding:24px}
+.modal-summary-box{background:var(--sand);border:1px solid var(--line);border-radius:8px;padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.modal-summary-item strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.modal-summary-item span{font-size:13.5px;font-weight:750;color:var(--ink);margin-top:2px;display:block}
 .timeline{position:relative;padding-left:26px;display:flex;flex-direction:column;gap:20px}
 .timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:#d8e2df}
 .timeline-item{position:relative}
 .timeline-dot{position:absolute;left:-26px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid #cbd5cf}
 .timeline-item.done .timeline-dot{background:var(--ink);border-color:var(--ink)}
-.timeline-item.active .timeline-dot{background:#10b981;border-color:#a7f3d0;box-shadow:0 0 0 4px rgba(16,185,129,0.2)}
-.timeline-item-title{font-size:14px;font-weight:750;color:var(--ink)}
+.timeline-item.active .timeline-dot{background:#10b981;border-color:#a7f3d0;box-shadow:0 0 0 4px rgba(16,185,129,.2)}
+.timeline-item-title{font-size:13.5px;font-weight:750;color:var(--ink)}
 .timeline-item-time{font-size:12px;color:var(--muted);margin-left:6px;font-weight:500}
-.timeline-item-desc{font-size:13px;color:var(--muted);margin-top:3px}
-.modal-footer{padding:14px 22px 18px;border-top:1px solid #e7ece9;display:flex;gap:12px;justify-content:flex-end}
+.modal-footer{padding:16px 24px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:#fafafa}
 
-/* Estatísticas / Prova Social */
-.section-stats{background:#10222a;color:#fff;padding-block:48px 46px;border-bottom:1px solid #233a43}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.stat-card{padding:10px 18px;border-left:2px solid var(--orange)}
-.stat-num{display:block;font-family:var(--display);font-size:clamp(32px,3.8vw,46px);font-weight:800;letter-spacing:-.04em;color:#fff;line-height:1}
-.stat-label{display:block;font-size:14px;color:#a9bec3;margin-top:8px;line-height:1.4}
-@media(max-width:850px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:28px 18px}}
-@media(max-width:500px){.stats-grid{grid-template-columns:1fr;gap:20px}}
+/* 8. Modern 4-Column Footer with Real Verified Contacts */
+.footer{background:#0c1c23;color:#e2e8f0;padding-block:64px 32px;border-top:2px solid rgba(255,255,255,.07)}
+.footer-grid-4col{display:grid;grid-template-columns:1.4fr 1fr 1.35fr 1.05fr;gap:40px;align-items:start;margin-bottom:48px}
+.footer-col h4{font-size:14px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.07em;margin-bottom:20px}
+.footer-col p{font-size:14px;color:#94a3b8;line-height:1.6}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+.footer-col ul a{color:#cbd5e1;font-size:13.5px;text-decoration:none;transition:color .2s,transform .2s;display:inline-flex;align-items:center;gap:6px}
+.footer-col ul a:hover{color:var(--orange);transform:translateX(3px)}
+.footer-contact-list{display:flex;flex-direction:column;gap:13px}
+.footer-contact-item{display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:#cbd5e1}
+.footer-contact-icon{width:32px;height:32px;border-radius:6px;background:rgba(235,94,40,.12);color:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.footer-contact-icon svg{width:16px;height:16px}
+.footer-contact-info strong{display:block;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.footer-contact-info a{color:#cbd5e1;text-decoration:none;transition:color .2s}
+.footer-contact-info a:hover{color:var(--orange);text-decoration:underline}
+.footer-hours-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(16,185,129,.12);color:#34d399;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:650;margin-top:14px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;font-size:13px;color:#64748b}
+.footer-bottom a{color:#94a3b8;text-decoration:none}
+.footer-bottom a:hover{color:#fff}
+.social-link-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:6px;background:rgba(255,255,255,.06);color:#fff;transition:background .2s,transform .2s}
+.social-link-btn:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
+.social-link-btn svg{width:18px;height:18px}
+@media(max-width:960px){.footer-grid-4col{grid-template-columns:1fr 1fr;gap:35px}}
+@media(max-width:600px){.footer-grid-4col{grid-template-columns:1fr;gap:28px}.footer-bottom{flex-direction:column;text-align:center;gap:12px}}
 
-/* Simulador Interativo de Custo & Tempo */
-.simulator-section{background:#fff;border:1px solid #d5ded9;border-radius:8px;padding:32px 36px;margin-top:36px;box-shadow:0 4px 16px rgba(12,32,40,0.04)}
-.simulator-head{margin-bottom:24px}
-.simulator-head h3{font-size:24px;font-weight:800;color:var(--ink)}
-.simulator-head p{font-size:15px;color:var(--muted);margin-top:6px}
-.simulator-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
-.sim-field label{display:block;font-size:13px;font-weight:750;color:var(--ink);margin-bottom:6px}
-.sim-field select{width:100%;height:46px;padding:8px 12px;border:1px solid #cbd5cf;border-radius:4px;font-size:14px;color:var(--ink);background:#f9faf8}
-.simulator-result{margin-top:24px;padding:20px 24px;background:#f3f7f5;border:1px solid #d2dfd8;border-radius:6px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.sim-price-group strong{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--orange-dark)}
-.sim-price{font-family:var(--display);font-size:32px;font-weight:850;color:var(--ink)}
-.sim-time-group span{display:block;font-size:12px;color:var(--muted)}
-.sim-time{font-size:15px;font-weight:750;color:var(--ink)}
-.btn-apply-calc{background:var(--orange);color:#fff;border:none;border-radius:4px;padding:12px 20px;font-size:14px;font-weight:750;cursor:pointer;transition:background .2s}
-.btn-apply-calc:hover{background:var(--orange-dark)}
-@media(max-width:850px){.simulator-grid{grid-template-columns:1fr}}
 
-/* Layout Pedido com Ticket Digital */
-.request-grid-3col{display:grid;grid-template-columns:30% 42% 28%;gap:3%;align-items:start}
-@media(max-width:1150px){.request-grid-3col{grid-template-columns:1fr 1fr;gap:28px}.request-info-col{grid-column:1 / -1}}
-@media(max-width:850px){.request-grid-3col{grid-template-columns:1fr;gap:24px}}
-
-.waybill-ticket{background:#fff;color:var(--ink);border-radius:8px;border:1px solid #cbd6d0;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,0.18);position:relative}
-.waybill-header{background:var(--ink);color:#fff;padding:16px 20px;border-bottom:3px solid var(--orange)}
-.waybill-brand{display:flex;align-items:center;justify-content:space-between}
-.waybill-title{font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;color:#fff}
-.waybill-code{font-family:monospace;font-size:13px;background:rgba(255,255,255,0.12);padding:2px 8px;border-radius:3px;color:#ffb587}
-.waybill-body{padding:20px;display:flex;flex-direction:column;gap:14px;background:#fafbfa}
-.waybill-route{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e1e7e4;padding:12px 14px;border-radius:6px}
-.route-node strong{display:block;font-size:10px;text-transform:uppercase;color:var(--muted);letter-spacing:.05em}
-.route-node span{font-size:13px;font-weight:750;color:var(--ink);max-width:90px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
-.route-arrow{color:var(--orange);font-weight:800;font-size:18px}
-.waybill-row{display:flex;justify-content:space-between;border-bottom:1px dashed #d8e0dc;padding-bottom:8px;font-size:13px}
-.waybill-row span:first-child{color:var(--muted)}
-.waybill-row span:last-child{font-weight:700;color:var(--ink);text-align:right}
-.waybill-price-row{background:#fff7f0;border:1px solid #ffd8c2;padding:12px;border-radius:6px;display:flex;justify-content:space-between;align-items:center}
-.waybill-price-row strong{font-size:12px;color:var(--orange-dark)}
-.waybill-price-val{font-size:20px;font-weight:850;color:var(--ink)}
-.waybill-stamp{margin-top:6px;text-align:center;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#059669;background:#ecfdf5;border:1px solid #a7f3d0;padding:6px;border-radius:4px}
-
-/* Testemunhos e Prova Social */
-.testimonials-section{background:#f1f3ee;padding-block:92px}
-.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.testimonial-card{background:#fff;border:1px solid #d4ddd7;border-radius:6px;padding:26px 24px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 2px 6px rgba(13,33,38,0.03)}
-.test-stars{color:#f59e0b;font-size:14px;letter-spacing:2px;margin-bottom:14px}
-.testimonial-card p{font-size:15px;color:var(--ink);line-height:1.6;font-style:italic}
-.test-author{display:flex;align-items:center;gap:12px;margin-top:22px;padding-top:16px;border-top:1px solid #e8edea}
-.test-avatar{width:42px;height:42px;border-radius:50%;background:var(--ink);color:#fff;display:inline-grid;place-items:center;font-weight:800;font-size:14px;flex-shrink:0}
-.test-info strong{display:block;font-size:14px;font-weight:750;color:var(--ink)}
-.test-info span{font-size:12px;color:var(--muted)}
-@media(max-width:960px){.testimonials-grid{grid-template-columns:1fr}}
-
-  /* Contactos e Grelha do Rodapé */
-  .footer{background:#0c1c23;color:#e2e8f0;padding-block:60px 30px;border-top:2px solid rgba(255,255,255,.07)}
-  .footer-grid-4col{display:grid;grid-template-columns:1.4fr 1fr 1.3fr 1.1fr;gap:40px;align-items:start;margin-bottom:45px}
-  .footer-col h4{font-size:16px;font-weight:750;color:#fff;text-transform:uppercase;letter-spacing:.05em;margin-bottom:20px;display:flex;align-items:center;gap:8px}
-  .footer-col h4::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.1);max-width:50px}
-  .footer-col p{font-size:14px;color:#94a3b8;line-height:1.6}
-  .footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
-  .footer-col ul a{color:#cbd5e1;font-size:14px;text-decoration:none;transition:color .2s,transform .2s;display:inline-flex;align-items:center;gap:6px}
-  .footer-col ul a:hover{color:var(--orange);transform:translateX(3px)}
-  .footer-contact-list{display:flex;flex-direction:column;gap:14px}
-  .footer-contact-item{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:#cbd5e1}
-  .footer-contact-icon{width:32px;height:32px;border-radius:8px;background:rgba(235,94,40,.12);color:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-  .footer-contact-icon svg{width:16px;height:16px}
-  .footer-contact-info strong{display:block;color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px}
-  .footer-contact-info a{color:#cbd5e1;text-decoration:none;transition:color .2s}
-  .footer-contact-info a:hover{color:var(--orange);text-decoration:underline}
-  .footer-hours-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(16,185,129,.12);color:#34d399;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:650;margin-top:10px}
-  .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;font-size:13px;color:#64748b}
-  .footer-bottom a{color:#94a3b8;text-decoration:none}
-  .footer-bottom a:hover{color:#fff}
-  .social-link-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.06);color:#fff;transition:background .2s,color .2s,transform .2s}
-  .social-link-btn:hover{background:var(--orange);color:#fff;transform:translateY(-2px)}
-  .social-link-btn svg{width:18px;height:18px}
-  
-  @media(max-width:960px){
-    .footer-grid-4col{grid-template-columns:1fr 1fr;gap:35px}
-  }
-  @media(max-width:600px){
-    .footer-grid-4col{grid-template-columns:1fr;gap:30px}
-    .footer-bottom{flex-direction:column;text-align:center;gap:12px}
-  }
+/* Timeline step classes matching JS output exactly */
+.timeline{position:relative;padding-left:24px;display:flex;flex-direction:column;gap:18px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:#d8e2df}
+.timeline-step{position:relative}
+.step-point{position:absolute;left:-24px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid #cbd5cf}
+.timeline-step.step-done .step-point{background:var(--ink);border-color:var(--ink)}
+.timeline-step.step-current .step-point{background:#10b981;border-color:#a7f3d0;box-shadow:0 0 0 4px rgba(16,185,129,.2)}
+.step-title{font-size:13.5px;font-weight:750;color:var(--ink)}
+.step-time{font-size:12px;color:var(--muted);margin-top:2px}
 
 </style>
 </head>
 <body>
-<div class="top-status-bar" role="region" aria-label="Status do serviço em tempo real">
-  <div class="wrap top-status-inner">
-    <div class="top-status-left">
-      <span class="pulse-indicator" aria-hidden="true"></span>
-      <span><strong>Estafetas ativos em Luanda agora</strong> · Tempo médio de recolha: <strong>35 min</strong></span>
-    </div>
-    <div class="status-badge-secure">
-      <span>🛡️ 100% Entregas com Comprovativo</span>
-      <span>·</span>
-      <span>6 Zonas Cobertas na Grande Luanda</span>
-    </div>
-  </div>
-</div>
+
 <header class="header" id="topo"><div class="wrap header-row">
   <a class="brand" href="#topo" aria-label="B-Express, voltar ao início">
     <img class="official-logo" src="https://www.bexpress.online/logo.png" alt="Logótipo B-Express" decoding="async" onload="this.classList.add('is-loaded')" onerror="this.classList.remove('is-loaded')">
     <span class="brand-fallback"><span class="orange-letter">B</span>-EXPRESS</span>
   </a>
+  <div class="header-status" aria-label="Status operacional da frota">
+    <span class="pulse-dot" aria-hidden="true"></span>
+    <span>Estafetas activos em Luanda · <strong>Recolha ~35 min</strong></span>
+  </div>
+
   <nav class="main-nav" id="mainNav" aria-label="Menu principal">
     <a href="#como-funciona">Como funciona</a><a href="#simulador">Simulador</a><a href="#negocios">Para negócios</a><a href="#zonas">Zonas</a><a href="#testemunhos">Avaliações</a><a href="#perguntas">Dúvidas</a>
   </nav>
@@ -435,7 +444,25 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
    <h1 class="display" aria-label="Tens uma encomenda? Faz o pedido aqui."><span class="typing-text" id="heroTyping" aria-hidden="true">Tens uma encomenda?</span> <em aria-hidden="true">Faz o pedido aqui.</em></h1>
    <p class="lead">Para uma entrega pontual ou para os pedidos da tua loja: indica-nos onde recolher e para onde enviar. A equipa confirma contigo os detalhes antes de avançar.</p>
    <div class="hero-actions"><a class="btn btn-primary" href="#pedido" data-customer="pessoal">Enviar uma encomenda <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#negocios">Entregas para o meu negócio <span aria-hidden="true">→</span></a></div>
-   <p class="hero-foot">Contacto directo com a equipa para confirmar as condições da entrega.</p>
+   <div class="hero-tracker-dock">
+        <div class="tracker-dock-head">
+          <span>📦 Rastrear Encomenda em Tempo Real</span>
+          <span style="font-size:11px;color:var(--muted)">Luanda Fleet Live</span>
+        </div>
+        <form class="tracker-form" id="heroTrackingForm">
+          <div class="tracker-input-wrap">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="heroTrackCode" class="tracker-input" placeholder="Ex: BX-9842 ou teu código" autocomplete="off">
+          </div>
+          <button type="submit" class="tracker-btn">Consultar</button>
+        </form>
+        <div class="tracker-samples">
+          <span>Testar código:</span>
+          <button type="button" class="tracker-pill" data-code="BX-9842">BX-9842 (Em Rota)</button>
+          <button type="button" class="tracker-pill" data-code="BX-7710">BX-7710 (Entregue)</button>
+        </div>
+      </div>
+      <p class="hero-foot" style="margin-top:18px">Contacto directo com a equipa para confirmar as condições antes do envio.</p>
    <div class="tracking-widget">
      <label for="trackingCode" class="tracking-label">Rastrear encomenda em tempo real</label>
      <form class="tracking-form" id="trackingForm">
@@ -461,29 +488,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
    <div class="hero-img-note"><span>B-Express / Luanda</span><span>Recolha · Transporte · Entrega</span></div>
  </div>
 </div></section>
-  <!-- METRICAS DE IMPACTO / SOCIAL PROOF -->
-  <section class="section-stats" aria-label="Métricas de Impacto">
-    <div class="wrap">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-num" data-target="15000">+15.000</div>
-          <div class="stat-desc">Entregas concluídas em Luanda</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" data-target="98.7">98.7%</div>
-          <div class="stat-desc">Entregas feitas no mesmo dia</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" data-target="6">6</div>
-          <div class="stat-desc">Zonas metropolitanas atendidas</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" data-target="120">+120</div>
-          <div class="stat-desc">Empresas e lojas parceiras ativas</div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 <div class="strip"><div class="wrap strip-inner"><p><strong>Não sabes se chegamos à tua zona?</strong> Indica o local de recolha e o destino. Confirmamos contigo se podemos fazer a entrega.</p><a href="#pedido">Indicar locais <span aria-hidden="true">↗</span></a></div></div>
 <section class="section" id="como-funciona"><div class="wrap">
  <div class="section-header"><p class="eyebrow orange">01 / Como funciona</p><div><h2 class="title">Simples de pedir. Claro de combinar.</h2><p class="lead">Diz-nos o que precisas. Antes de qualquer entrega, a B-Express confirma a possibilidade de atendimento e as condições do serviço.</p></div></div>
@@ -509,19 +514,16 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <h2 class="title">Encontra a tua zona.</h2>
     <p class="lead">Fazemos entregas em várias zonas de Luanda e arredores. Escolhe a tua zona e confirma a disponibilidade com a nossa equipa.</p>
   </div>
-
-  <!-- SIMULADOR INTERATIVO DE FRETE / PRAZO -->
-  <div class="simulator-card" id="simulador">
+  <!-- SIMULADOR INTERATIVO DE FRETE -->
+  <div class="sim-container" id="simulador">
     <div class="sim-header">
-      <div>
-        <span class="sim-tag">⚡ Cotação Instantânea</span>
-        <h3 style="font-size:24px;font-weight:750;margin-top:6px;color:var(--text)">Simulador de Envio em Luanda</h3>
-        <p style="font-size:14px;color:var(--muted);margin-top:3px">Estima o valor de referência e tempo médio de recolha antes de abrir o WhatsApp</p>
-      </div>
+      <span class="sim-tag">⚡ Cotação Instantânea</span>
+      <h3>Simulador de Envio por Zonas em Luanda</h3>
+      <p>Estima o valor de referência e o tempo de recolha antes de falar com a nossa equipa.</p>
     </div>
     <div class="sim-body">
-      <div class="sim-fields">
-        <div class="field">
+      <div class="sim-form-col">
+        <div class="sim-field">
           <label for="simOrigin">Ponto de Partida (Recolha)</label>
           <select id="simOrigin" class="sim-select">
             <option value="Maianga">Maianga (Centro)</option>
@@ -534,7 +536,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
             <option value="Outro">Outro ponto de Luanda</option>
           </select>
         </div>
-        <div class="field">
+        <div class="sim-field">
           <label for="simZone">Zona de Destino</label>
           <select id="simZone" class="sim-select">
             <option value="Zona 1" data-price="2500" data-time="30-45 min">Zona 1 — Cacuaco Vila / Central (2.500 Kz)</option>
@@ -545,8 +547,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
             <option value="Zona 6" data-price="3500" data-time="40-60 min">Zona 6 — Morro Bento / Benfica (3.500 Kz)</option>
           </select>
         </div>
-        <div class="field">
-          <label for="simType">Tipo de Carga</label>
+        <div class="sim-field">
+          <label for="simType">Tipo de Encomenda</label>
           <select id="simType" class="sim-select">
             <option value="doc" data-extra="0">Documentos / Envelopes (Standard)</option>
             <option value="small" data-extra="0" selected>Pequena Encomenda (&lt; 5kg)</option>
@@ -555,27 +557,32 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
           </select>
         </div>
       </div>
-      <div class="sim-result-box">
-        <div class="sim-metric">
-          <span class="sim-metric-label">Valor Estimado</span>
-          <span class="sim-metric-val sim-metric-price" id="simResultPrice">3.000 Kz</span>
+      <div class="sim-quote-card">
+        <div>
+          <span class="quote-top-tag">Estimativa do Sistema</span>
+          <div class="quote-price-wrap">
+            <span class="quote-price-label">Valor de Referência</span>
+            <div class="quote-price-val" id="simResultPrice">3.000 Kz</div>
+          </div>
+          <div class="quote-meta-row">
+            <div class="quote-meta-item">
+              <strong>Tempo Médio</strong>
+              <span id="simResultTime">35-50 min</span>
+            </div>
+            <div class="quote-meta-item">
+              <strong>Disponibilidade</strong>
+              <span style="color:#34d399">● Imediata</span>
+            </div>
+          </div>
         </div>
-        <div class="sim-metric">
-          <span class="sim-metric-label">Tempo Previsto</span>
-          <span class="sim-metric-val" id="simResultTime">35-50 min</span>
-        </div>
-        <div class="sim-metric">
-          <span class="sim-metric-label">Estafeta Atribuído</span>
-          <span class="sim-metric-val" style="color:#059669;display:flex;align-items:center;gap:6px">
-            <span class="status-pulse-dot" style="display:inline-block"></span> Imediato
-          </span>
-        </div>
-        <button type="button" class="btn btn-primary" id="btnApplySim" style="margin-top:8px;font-size:14px;padding:12px 18px">
-          Aplicar e Pedir Esta Rota &rarr;
+        <button type="button" class="quote-apply-btn" id="btnApplySim">
+          Pedir Esta Rota Agora →
         </button>
       </div>
     </div>
   </div>
+
+  
 
   <div class="zone-list" aria-label="Zonas de entrega">
 <button class="zone zone-card" type="button" data-zone="Zona 1 — Cacuaco Vila" aria-label="Seleccionar Cacuaco e preencher o pedido">
@@ -618,60 +625,103 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   <p class="coverage-note">A disponibilidade e o valor da entrega são confirmados antes de avançar.</p>
 </div></section>
 
-<!-- TESTEMUNHOS & PROVA SOCIAL COM CLIENTES REAIS -->
-<section class="section testimonials-section" id="testemunhos">
+<!-- TESTEMUNHOS & PROVA SOCIAL -->
+<section class="section section-testi" id="testemunhos">
   <div class="wrap">
     <div class="section-header">
       <p class="eyebrow orange">04 / Clientes Satisfeitos</p>
       <div>
-        <h2 class="title">Quem confia na B-Express todos os dias.</h2>
-        <p class="lead">Lojas online, empresas e clientes particulares em Luanda confiam na nossa rapidez e acompanhamento contínuo.</p>
+        <h2 class="title">Quem confia na B-Express em Luanda.</h2>
+        <p class="lead">Lojas online, empresas e clientes individuais contam diariamente com o nosso compromisso e rapidez.</p>
       </div>
     </div>
-    <div class="testimonials-grid">
+    <div class="testi-grid">
       <article class="testi-card">
-        <div class="testi-header">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Deixei de ter preocupações com as entregas das clientes. A B-Express recolhe aqui no Kilamba e entrega com comprovativo assinado no WhatsApp. Recomendo sem hesitar!"</p>
+        <div class="testi-author-row">
           <div class="testi-avatar">KL</div>
-          <div>
-            <h3 class="testi-author">Kátia Lourenço</h3>
-            <p class="testi-role">Proprietária da Boutique BelaLu (Kilamba)</p>
+          <div class="testi-info">
+            <strong>Kátia Lourenço</strong>
+            <span>Boutique BelaLu · Kilamba</span>
           </div>
         </div>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Deixei de ter dores de cabeça com os envios para as clientes. A B-Express recolhe aqui no Kilamba e entrega no mesmo dia com comprovativo no WhatsApp. Recomendo a 100%!"</p>
-        <div class="testi-meta"><span>✓ Cliente Verificada</span><span>Há 3 dias</span></div>
       </article>
       <article class="testi-card">
-        <div class="testi-header">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Distribuímos equipamentos e material informático em Luanda. O estafeta chega sempre em menos de 40 minutos e os clientes recebem em segurança no mesmo dia."</p>
+        <div class="testi-author-row">
           <div class="testi-avatar">MC</div>
-          <div>
-            <h3 class="testi-author">Mauro Conceição</h3>
-            <p class="testi-role">Gerente de TechAngola (Maianga)</p>
+          <div class="testi-info">
+            <strong>Mauro Conceição</strong>
+            <span>TechAngola · Maianga</span>
           </div>
         </div>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Entregas de material informático urgente e peças delicadas. O estafeta chega sempre em menos de 40 minutos e os clientes recebem sem atrasos. O melhor serviço em Luanda."</p>
-        <div class="testi-meta"><span>✓ Conta Corporativa</span><span>Há 1 semana</span></div>
       </article>
       <article class="testi-card">
-        <div class="testi-header">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Envio regular de processos jurídicos e documentação de empresas. Serviço discreto, pontual e com comunicação exemplar via WhatsApp."</p>
+        <div class="testi-author-row">
           <div class="testi-avatar">AP</div>
-          <div>
-            <h3 class="testi-author">Ana Paula Silva</h3>
-            <p class="testi-role">Particular (Talatona)</p>
+          <div class="testi-info">
+            <strong>Dra. Ana Paula Silva</strong>
+            <span>Advocacia · Talatona</span>
           </div>
         </div>
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Tinha documentos urgentes para entregar no cartório na Baixa. Solicitei pelo site, responderam logo no WhatsApp e em 45 minutos estava entregue na mão certa. Excelente atendimento!"</p>
-        <div class="testi-meta"><span>✓ Envio Particular</span><span>Há 2 semanas</span></div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section request" id="pedido"><div class="wrap request-grid-3col">
+
+
+<section class="section request" id="pedido"><div class="wrap request-grid">
  <div><p class="eyebrow">04 / Pedir entrega</p><h2 class="title">Diz-nos o que precisas. Nós ajudamos a combinar.</h2><p class="lead">Indica os locais e descreve o que precisas de enviar. Preparamos uma mensagem com os teus dados para partilhares no WhatsApp.</p>
   <div class="request-info"><strong>Antes de enviar</strong><p>A equipa confirma a disponibilidade, o valor e os detalhes da recolha antes de avançar.</p></div>
+
+  <!-- GUIA DE EXPEDIÇÃO DIGITAL DINÂMICA -->
+  <aside class="digital-waybill" aria-label="Resumo dinâmico da guia de entrega">
+    <div class="waybill-top">
+      <span class="waybill-top-tag">GUIA DE EXPEDIÇÃO DIGITAL</span>
+      <span class="waybill-top-code" id="ticketCode">BX-PREVIEW</span>
+    </div>
+    <div class="waybill-content">
+      <div class="waybill-route-strip">
+        <div class="route-stop">
+          <strong>Ponto de Recolha</strong>
+          <span id="ticketOrigin">A indicar</span>
+        </div>
+        <span class="route-divider-arrow">➔</span>
+        <div class="route-stop">
+          <strong>Destino</strong>
+          <span id="ticketDestination">A indicar</span>
+        </div>
+      </div>
+      <div class="waybill-row">
+        <span>Remetente:</span>
+        <span id="ticketCustomer">A preencher...</span>
+      </div>
+      <div class="waybill-row">
+        <span>Contacto:</span>
+        <span id="ticketPhone">—</span>
+      </div>
+      <div class="waybill-row">
+        <span>Zona de Entrega:</span>
+        <span id="ticketZone">A seleccionar</span>
+      </div>
+      <div class="waybill-row">
+        <span>Volume / Carga:</span>
+        <span id="ticketParcel">—</span>
+      </div>
+      <div class="waybill-price-highlight">
+        <span>Previsão de Custo</span>
+        <strong id="ticketEstimatedPrice">A confirmar</strong>
+      </div>
+    </div>
+    <div class="waybill-footer-note">
+      <span>🔒 Envio direto para o WhatsApp oficial da B-Express (+244 955 920 680)</span>
+    </div>
+  </aside>
  </div>
  <form class="form" id="orderForm" novalidate>
   <h3 id="formHeading">Vamos tratar da tua entrega.</h3><p class="form-sub" id="formSub">Escolhe o tipo de pedido e indica os locais.</p>
@@ -688,55 +738,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   <div class="form-actions"><button class="btn btn-primary whatsapp-submit" type="submit"><svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M20.55 11.77c0 4.72-3.83 8.55-8.55 8.55-1.45 0-2.87-.37-4.1-1.06L3.4 20.6l1.3-4.38a8.5 8.5 0 0 1-1.25-4.45C3.45 7.05 7.28 3.22 12 3.22s8.55 3.83 8.55 8.55Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.37 7.8c-.26-.53-.49-.54-.69-.54-.21 0-.45.05-.67.29-.3.32-.77.9-.77 2.04 0 1.16.81 2.39 1.06 2.74 1.68 2.41 3.57 3.87 5.72 4.41.95.23 1.53.14 2.12-.15.61-.3 1.24-1.07 1.42-1.55.13-.4.1-.57-.18-.74l-2.16-1.02c-.33-.15-.48-.11-.7.17l-.9 1.04c-.17.21-.32.23-.61.08-1.05-.51-2.22-1.49-2.87-2.55-.16-.25-.02-.38.13-.55l.54-.63c.17-.22.16-.4.06-.62L8.37 7.8Z" fill="currentColor"/></svg><span>Preparar mensagem no WhatsApp</span><span aria-hidden="true">↗</span></button><p>Revê a mensagem no WhatsApp antes de a enviares à B-Express.</p></div>
   <p class="form-error" id="formError" role="alert" aria-live="polite"></p><p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
  </form>
- <!-- BILHETE DE EXPEDIÇÃO DIGITAL EM TEMPO REAL -->
- <aside class="waybill-ticket" aria-label="Resumo em tempo real da guia de envio">
-   <div class="ticket-header">
-     <span class="ticket-badge">GUIA DIGITAL</span>
-     <span class="ticket-code" id="ticketCode">BX-PREVIEW</span>
-   </div>
-   <div class="ticket-body">
-     <div class="ticket-row">
-       <span class="ticket-label">Cliente / Remetente</span>
-       <span class="ticket-value" id="ticketCustomer">A preencher...</span>
-     </div>
-     <div class="ticket-row">
-       <span class="ticket-label">Contacto</span>
-       <span class="ticket-value" id="ticketPhone">—</span>
-     </div>
-     <div class="ticket-route">
-       <div class="ticket-point">
-         <span class="ticket-dot start"></span>
-         <div>
-           <div class="ticket-label">Recolha</div>
-           <strong id="ticketOrigin">A indicar</strong>
-         </div>
-       </div>
-       <div class="ticket-point">
-         <span class="ticket-dot end"></span>
-         <div>
-           <div class="ticket-label">Destino</div>
-           <strong id="ticketDestination">A indicar</strong>
-         </div>
-       </div>
-     </div>
-     <div class="ticket-row">
-       <span class="ticket-label">Zona Seleccionada</span>
-       <span class="ticket-value" id="ticketZone">A seleccionar</span>
-     </div>
-     <div class="ticket-row">
-       <span class="ticket-label">Conteúdo do Envio</span>
-       <span class="ticket-value" id="ticketParcel">—</span>
-     </div>
-     <div class="ticket-divider"></div>
-     <div class="ticket-row" style="align-items:baseline">
-       <span class="ticket-label" style="font-weight:700">Preço Previsto</span>
-       <span class="ticket-value" style="color:var(--orange-dark);font-size:16px;font-weight:800" id="ticketEstimatedPrice">A confirmar</span>
-     </div>
-   </div>
-   <div class="ticket-footer">
-     <span>🔒 Transmissão direta e segura para a equipa via WhatsApp</span>
-   </div>
- </aside>
+ 
 
 </div></section>
 <section class="section faq" id="perguntas"><div class="wrap faq-grid"><div><p class="eyebrow orange">05 / Dúvidas frequentes</p><h2 class="title">Antes de enviar.</h2></div><div class="questions">
@@ -745,36 +747,50 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
  <details><summary>Faço várias entregas por semana. Como funciona?</summary><p>Escolhe «Para o meu negócio» e explica as tuas necessidades no WhatsApp. A equipa pode analisar as condições de atendimento.</p></details>
  <details><summary>O pedido fica confirmado no site?</summary><p>Não. O site prepara os dados para o contacto. A confirmação é feita pela equipa, depois de analisar o pedido.</p></details>
 </div></div></section>
+
+
 <!-- MODAL DE RASTREIO INTERATIVO -->
 <div class="tracking-modal-backdrop" id="trackingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display:none">
   <div class="tracking-modal">
     <div class="modal-header">
       <div>
-        <span class="sim-tag" style="background:#e0f2fe;color:#0369a1;margin-bottom:4px">STATUS AO VIVO</span>
-        <h3 id="modalTitle" style="font-size:20px;font-weight:750;margin-top:4px">Rastreio de Encomenda</h3>
-        <p style="font-size:13px;color:var(--muted)">Código: <strong id="modalCodeDisplay" style="color:var(--ink)">BX-9842</strong></p>
+        <h3 id="modalTitle">Rastreio de Encomenda</h3>
+        <p>Código: <strong id="modalCodeDisplay" style="color:#fff">BX-9842</strong></p>
       </div>
-      <button type="button" class="modal-close" id="btnCloseModal" aria-label="Fechar rastreio">&times;</button>
+      <button type="button" class="modal-close-btn" id="btnCloseModal" aria-label="Fechar">&times;</button>
     </div>
     <div class="modal-body">
-      <div class="modal-summary" style="background:var(--sand);padding:14px 18px;border-radius:12px;margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px">
-        <div><span style="color:var(--muted);display:block">Origem:</span><strong id="modalOrigin">Talatona (Condomínio Rosalinda)</strong></div>
-        <div><span style="color:var(--muted);display:block">Destino:</span><strong id="modalDest">Ingombota (Edifício Escom)</strong></div>
-        <div><span style="color:var(--muted);display:block">Estafeta:</span><strong id="modalCourier">Mateus Silva (Mota BX-04)</strong></div>
-        <div><span style="color:var(--muted);display:block">Previsão:</span><strong style="color:var(--orange-dark)" id="modalEta">~18 minutos</strong></div>
+      <div class="modal-summary-box">
+        <div class="modal-summary-item">
+          <strong>Origem</strong>
+          <span id="modalOrigin">Talatona (Cond. Rosalinda)</span>
+        </div>
+        <div class="modal-summary-item">
+          <strong>Destino</strong>
+          <span id="modalDest">Ingombota (Edifício Escom)</span>
+        </div>
+        <div class="modal-summary-item">
+          <strong>Estafeta</strong>
+          <span id="modalCourier">Mateus Silva (Mota BX-04)</span>
+        </div>
+        <div class="modal-summary-item">
+          <strong>Previsão</strong>
+          <span id="modalEta" style="color:var(--orange-dark)">~18 minutos</span>
+        </div>
       </div>
-      <div class="tracking-timeline" id="modalTimeline">
+      <div class="timeline" id="modalTimeline">
         <!-- Linha do tempo dinâmica -->
       </div>
     </div>
-    <div class="modal-footer" style="padding:16px 24px;background:#fafafa;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;border-radius:0 0 18px 18px">
-      <span style="font-size:12px;color:var(--muted)">Dúvidas sobre esta entrega?</span>
-      <a href="https://wa.me/244955920680?text=Ol%C3%A1%20B-Express%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20rastreio%20BX-9842" id="modalWaBtn" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 14px">Falar no WhatsApp</a>
+    <div class="modal-footer">
+      <span style="font-size:12px;color:var(--muted)">Dúvidas sobre o pedido?</span>
+      <a href="https://wa.me/244955920680?text=Ol%C3%A1%20B-Express%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20rastreio%20BX-9842" id="modalWaBtn" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13px;padding:8px 16px">Falar no WhatsApp</a>
     </div>
   </div>
 </div>
 
 </main>
+
 <footer class="footer" id="contactos"><div class="wrap">
   <div class="footer-grid-4col">
     <!-- Coluna 1: Marca & Propósito -->
@@ -785,33 +801,32 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
       </a>
       <p style="margin-bottom:18px">Movemos negócios. Entregamos confiança. O serviço de estafetas expresso mais pontual e seguro de Luanda.</p>
       <div style="display:flex;gap:10px;align-items:center" aria-label="Redes sociais oficiais">
-        <a href="https://wa.me/244955920680?text=Ol%C3%A1%20B-Express%2C%20gostaria%20de%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener" class="social-link-btn" aria-label="WhatsApp B-Express" title="WhatsApp Oficial">
+        <a href="https://wa.me/244955920680?text=Ol%C3%A1%20B-Express" target="_blank" rel="noopener" class="social-link-btn" aria-label="WhatsApp B-Express" title="WhatsApp Oficial">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.55 11.77c0 4.72-3.83 8.55-8.55 8.55-1.45 0-2.87-.37-4.1-1.06L3.4 20.6l1.3-4.38a8.5 8.5 0 0 1-1.25-4.45C3.45 7.05 7.28 3.22 12 3.22s8.55 3.83 8.55 8.55Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.37 7.8c-.26-.53-.49-.54-.69-.54-.21 0-.45.05-.67.29-.3.32-.77.9-.77 2.04 0 1.16.81 2.39 1.06 2.74 1.68 2.41 3.57 3.87 5.72 4.41.95.23 1.53.14 2.12-.15.61-.3 1.24-1.07 1.42-1.55.13-.4.1-.57-.18-.74l-2.16-1.02c-.33-.15-.48-.11-.7.17l-.9 1.04c-.17.21-.32.23-.61.08-1.05-.51-2.22-1.49-2.87-2.55-.16-.25-.02-.38.13-.55l.54-.63c.17-.22.16-.4.06-.62L8.37 7.8Z"/></svg>
         </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link-btn" aria-label="Facebook B-Express" title="Facebook Oficial">
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link-btn" aria-label="Facebook B-Express" title="Facebook">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M14.15 21v-8.2h2.75l.42-3.22h-3.17V7.53c0-.93.27-1.56 1.6-1.56h1.7V3.09c-.3-.04-1.3-.13-2.47-.13-2.47 0-4.15 1.51-4.15 4.29v2.33H8.06v3.22h2.77V21h3.32Z"/></svg>
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link-btn" aria-label="Instagram B-Express" title="Instagram Oficial">
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link-btn" aria-label="Instagram B-Express" title="Instagram">
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3.3" y="3.3" width="17.4" height="17.4" rx="5.3"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.4" cy="6.8" r="1.15" fill="currentColor"/></svg>
         </a>
       </div>
     </div>
 
-    <!-- Coluna 2: Navegação Rápida -->
+    <!-- Coluna 2: Navegação -->
     <div class="footer-col">
       <h4>Navegação</h4>
       <ul>
         <li><a href="#como-funciona">→ Como funciona</a></li>
         <li><a href="#negocios">→ Para lojas e empresas</a></li>
         <li><a href="#zonas">→ Zonas de entrega</a></li>
-        <li><a href="#simulador">→ Simulador de Frete</a></li>
-        <li><a href="#heroTrackingForm">→ Rastreio de Encomenda</a></li>
-        <li><a href="#testemunhos">→ Clientes Satisfeitos</a></li>
-        <li><a href="#pedido">→ Fazer Pedido</a></li>
+        <li><a href="#simulador">→ Simulador de frete</a></li>
+        <li><a href="#testemunhos">→ Clientes satisfeitos</a></li>
+        <li><a href="#pedido">→ Fazer pedido</a></li>
       </ul>
     </div>
 
-    <!-- Coluna 3: Informações de Contacto Oficiais -->
+    <!-- Coluna 3: Contactos Oficiais -->
     <div class="footer-col">
       <h4>Contactos Oficiais</h4>
       <div class="footer-contact-list">
@@ -860,23 +875,21 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <!-- Coluna 4: Horário & Suporte -->
     <div class="footer-col">
       <h4>Horário de Operação</h4>
-      <p style="margin-bottom:8px">Equipa e estafetas em prontidão contínua:</p>
+      <p style="margin-bottom:8px">Equipa e estafetas em prontidão:</p>
       <ul style="gap:8px;font-size:13px;color:#94a3b8">
         <li><strong>Segunda a Sexta:</strong> 07:30 – 18:30</li>
         <li><strong>Sábados:</strong> 08:00 – 16:00</li>
-        <li><strong>Domingos & Feriados:</strong> Sob agendamento</li>
+        <li><strong>Domingos & Feriados:</strong> Sob marcação</li>
       </ul>
       <div class="footer-hours-badge">
-        <span class="status-pulse-dot"></span> Apoio ao Cliente Activo
+        <span class="pulse-dot"></span> Apoio ao Cliente Activo
       </div>
     </div>
   </div>
 
   <div class="footer-bottom">
     <p>© 2026 B-EXPRESS Entregas e Logística. Todos os direitos reservados.</p>
-    <div style="display:flex;gap:20px">
-      <a href="#topo">Voltar ao topo ↑</a>
-    </div>
+    <div><a href="#topo">Voltar ao topo ↑</a></div>
   </div>
 </div></footer>
 <div class="mobile-action"><a class="btn btn-primary" href="#pedido">Pedir uma entrega <span aria-hidden="true">↗</span></a></div>
