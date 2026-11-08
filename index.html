@@ -417,6 +417,66 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .step-title{font-size:13.5px;font-weight:750;color:var(--ink)}
 .step-time{font-size:12px;color:var(--muted);margin-top:2px}
 
+
+/* ==========================================================================
+   TRACKING STRIP & LUXURY TESTIMONIALS CAROUSEL
+   ========================================================================== */
+
+/* Tracking Strip Section */
+.tracking-strip-section{background:linear-gradient(180deg,#f9faf8 0%,#f2f5f1 100%);padding-block:56px 52px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tracking-strip-inner{display:flex;flex-direction:column;gap:26px;align-items:center;text-align:center}
+.tracking-strip-badge{display:inline-flex;align-items:center;gap:8px;background:#eef7f2;border:1px solid #bfe3cf;color:#0e6245;font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:20px}
+.tracking-strip-title{font-family:var(--display);font-size:clamp(24px,3vw,34px);font-weight:850;color:var(--ink);letter-spacing:-.02em;margin-top:8px}
+.tracking-strip-sub{font-size:15px;color:var(--muted);max-width:580px;margin-top:6px;line-height:1.55}
+.tracking-strip-box{width:100%;max-width:740px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px 26px;box-shadow:0 12px 36px rgba(16,35,44,.06)}
+.tracking-strip-form{display:flex;gap:12px;align-items:stretch}
+.tracking-strip-input-wrap{position:relative;flex:1}
+.tracking-strip-input-wrap .tracking-search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted);pointer-events:none}
+.tracking-strip-input{width:100%;height:52px;padding:10px 16px 10px 46px;background:#fcfdfc;border:1.5px solid var(--line);border-radius:8px;font-size:15px;color:var(--ink);font-weight:600;transition:all .2s}
+.tracking-strip-input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 4px rgba(235,94,40,.12);background:#fff}
+.tracking-strip-btn{height:52px;padding:0 26px;font-size:14.5px;font-weight:750;border-radius:8px}
+.tracking-strip-samples{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.samples-label{font-weight:600}
+.btn-sample-code{border:1px dashed #b7c7c1;background:#f4f6f4;color:var(--ink);border-radius:5px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;transition:all .15s}
+.btn-sample-code:hover{border-color:var(--orange);color:var(--orange-dark);background:#fff;transform:translateY(-1px)}
+@media(max-width:700px){
+  .tracking-strip-form{flex-direction:column}
+  .tracking-strip-btn{width:100%}
+  .tracking-strip-box{padding:18px}
+}
+
+/* Luxury Testimonials Carousel */
+.testi-header-row{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:38px}
+.testi-header-copy{max-width:680px}
+.carousel-nav-controls{display:flex;align-items:center;gap:14px}
+.carousel-nav-btn{width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid var(--line);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(16,35,44,.04)}
+.carousel-nav-btn svg{width:20px;height:20px}
+.carousel-nav-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:scale(1.05)}
+.carousel-pagination{display:flex;gap:7px;align-items:center}
+.carousel-dot{width:9px;height:9px;border-radius:50%;background:#cbd5cf;cursor:pointer;transition:all .25s}
+.carousel-dot.active{width:26px;border-radius:6px;background:var(--orange)}
+
+.carousel-viewport{overflow:hidden;width:100%;padding-block:6px 16px;cursor:grab}
+.carousel-viewport:active{cursor:grabbing}
+.carousel-track{display:flex;gap:24px;transition:transform .45s cubic-bezier(0.25, 1, 0.5, 1);will-change:transform}
+.testi-card-slide{flex:0 0 calc((100% - 48px) / 3);min-width:320px;box-sizing:border-box}
+@media(max-width:1100px){.testi-card-slide{flex:0 0 calc((100% - 24px) / 2)}}
+@media(max-width:720px){.testi-card-slide{flex:0 0 100%}}
+
+.testi-card-inner{background:#fff;border:1px solid var(--line);border-radius:12px;padding:32px 28px;height:100%;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 8px 24px rgba(16,35,44,.035);transition:all .22s}
+.testi-card-inner:hover{transform:translateY(-3px);border-color:var(--orange);box-shadow:0 14px 34px rgba(16,35,44,.07)}
+.testi-top-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.testi-stars-wrap{display:flex;align-items:center;gap:3px;color:#f59e0b;font-size:15px}
+.rating-num{font-size:12.5px;font-weight:800;color:var(--ink);margin-left:5px}
+.testi-verified-pill{background:#edf6f0;border:1px solid #bce2cb;color:#0d6345;font-size:11px;font-weight:750;padding:3px 9px;border-radius:12px}
+.testi-quote{font-size:15px;color:var(--ink);line-height:1.65;font-weight:480;margin-bottom:26px;flex-grow:1}
+.testi-quote strong{color:var(--ink);font-weight:750}
+.testi-author-row{display:flex;align-items:center;gap:13px;padding-top:18px;border-top:1px solid #edf2ee}
+.testi-avatar{width:44px;height:44px;border-radius:50%;color:#fff;display:inline-grid;place-items:center;font-weight:850;font-size:13.5px;flex-shrink:0;box-shadow:0 3px 8px rgba(0,0,0,.12)}
+.testi-info strong{display:block;font-size:14.5px;font-weight:800;color:var(--ink)}
+.testi-info span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.testi-sub-badge{display:inline-block;font-size:11px;color:var(--orange-dark);font-weight:650;margin-top:3px}
+
 </style>
 </head>
 <body>
@@ -426,13 +486,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     <img class="official-logo" src="https://www.bexpress.online/logo.png" alt="Logótipo B-Express" decoding="async" onload="this.classList.add('is-loaded')" onerror="this.classList.remove('is-loaded')">
     <span class="brand-fallback"><span class="orange-letter">B</span>-EXPRESS</span>
   </a>
-  <div class="header-status" aria-label="Status operacional da frota">
-    <span class="pulse-dot" aria-hidden="true"></span>
-    <span>Estafetas activos em Luanda · <strong>Recolha ~35 min</strong></span>
-  </div>
-
   <nav class="main-nav" id="mainNav" aria-label="Menu principal">
-    <a href="#como-funciona">Como funciona</a><a href="#simulador">Simulador</a><a href="#negocios">Para negócios</a><a href="#zonas">Zonas</a><a href="#testemunhos">Avaliações</a><a href="#perguntas">Dúvidas</a>
+    <a href="#como-funciona">Como funciona</a><a href="#simulador">Simulador</a><a href="#negocios">Para negócios</a><a href="#zonas">Zonas</a><a href="#testemunhos">Avaliações</a><a href="#contactos">Contactos</a><a href="#perguntas">Dúvidas</a>
   </nav>
   <a class="btn btn-primary header-cta" href="#pedido">Pedir entrega <span aria-hidden="true">↗</span></a>
   <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false" type="button">☰ Menu</button>
@@ -444,40 +499,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
    <h1 class="display" aria-label="Tens uma encomenda? Faz o pedido aqui."><span class="typing-text" id="heroTyping" aria-hidden="true">Tens uma encomenda?</span> <em aria-hidden="true">Faz o pedido aqui.</em></h1>
    <p class="lead">Para uma entrega pontual ou para os pedidos da tua loja: indica-nos onde recolher e para onde enviar. A equipa confirma contigo os detalhes antes de avançar.</p>
    <div class="hero-actions"><a class="btn btn-primary" href="#pedido" data-customer="pessoal">Enviar uma encomenda <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#negocios">Entregas para o meu negócio <span aria-hidden="true">→</span></a></div>
-   <div class="hero-tracker-dock">
-        <div class="tracker-dock-head">
-          <span>📦 Rastrear Encomenda em Tempo Real</span>
-          <span style="font-size:11px;color:var(--muted)">Luanda Fleet Live</span>
-        </div>
-        <form class="tracker-form" id="heroTrackingForm">
-          <div class="tracker-input-wrap">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            <input type="text" id="heroTrackCode" class="tracker-input" placeholder="Ex: BX-9842 ou teu código" autocomplete="off">
-          </div>
-          <button type="submit" class="tracker-btn">Consultar</button>
-        </form>
-        <div class="tracker-samples">
-          <span>Testar código:</span>
-          <button type="button" class="tracker-pill" data-code="BX-9842">BX-9842 (Em Rota)</button>
-          <button type="button" class="tracker-pill" data-code="BX-7710">BX-7710 (Entregue)</button>
-        </div>
-      </div>
-      <p class="hero-foot" style="margin-top:18px">Contacto directo com a equipa para confirmar as condições antes do envio.</p>
-   <div class="tracking-widget">
-     <label for="trackingCode" class="tracking-label">Rastrear encomenda em tempo real</label>
-     <form class="tracking-form" id="trackingForm">
-       <div class="tracking-input-wrap">
-         <svg class="tracking-search-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-         <input type="text" id="trackingCode" placeholder="Ex: BX-9842 ou teu contacto" autocomplete="off" required>
-         <button type="submit" class="btn-tracking">Rastrear</button>
-       </div>
-       <div class="tracking-samples">
-         <span>Exemplos rápidos:</span>
-         <button type="button" class="btn-sample-code" data-code="BX-9842">BX-9842 (Em Rota)</button>
-         <button type="button" class="btn-sample-code" data-code="BX-7710">BX-7710 (Entregue)</button>
-       </div>
-     </form>
-   </div>
+   <p class="hero-foot"><span class="pulse-dot" style="display:inline-block;vertical-align:middle;margin-right:6px"></span><strong>Estafetas em rota em Luanda</strong> · Recolha média em ~35 min. Confirmação directa com a equipa.</p>
  </div>
  <div class="hero-media" id="heroMedia">
    <div class="fallback"><div class="fallback-copy"><strong>A cidade<br>não pára.</strong><p>Uma encomenda de cada vez, Luanda em movimento.</p></div></div>
@@ -488,7 +510,59 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
    <div class="hero-img-note"><span>B-Express / Luanda</span><span>Recolha · Transporte · Entrega</span></div>
  </div>
 </div></section>
-  
+
+  <!-- FAIXA DE RASTREIO ELEGANTE EM TEMPO REAL -->
+  <section class="tracking-strip-section" id="rastreio" aria-label="Rastreio de Encomendas">
+    <div class="wrap tracking-strip-inner">
+      <div class="tracking-strip-header">
+        <div class="tracking-strip-badge">
+          <span class="pulse-dot"></span>
+          <span>Rastreio de Frota Luanda</span>
+        </div>
+        <h3 class="tracking-strip-title">Rastrear Encomenda em Tempo Real</h3>
+        <p class="tracking-strip-sub">Acompanha a recolha, o percurso do estafeta e a entrega com comprovativo.</p>
+      </div>
+      <div class="tracking-strip-box">
+        <form class="tracking-strip-form" id="heroTrackingForm">
+          <div class="tracking-strip-input-wrap">
+            <svg class="tracking-search-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input type="text" id="heroTrackCode" class="tracking-strip-input" placeholder="Digita o código de envio (ex: BX-9842) ou teu contacto" autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn-primary tracking-strip-btn">Rastrear Encomenda <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="tracking-strip-samples">
+          <span class="samples-label">Códigos de demonstração activos:</span>
+          <button type="button" class="btn-sample-code" data-code="BX-9842">BX-9842 (Em Rota · Talatona ➔ Maianga)</button>
+          <button type="button" class="btn-sample-code" data-code="BX-7710">BX-7710 (Entregue com Comprovativo)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICAS DE IMPACTO & SOCIAL PROOF -->
+  <section class="section-stats" aria-label="Métricas de Impacto">
+    <div class="wrap">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-num" data-target="15000">+15.000</span>
+          <span class="stat-label">Entregas concluídas na Grande Luanda</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="98.7">98.7%</span>
+          <span class="stat-label">Entregas pontuais no mesmo dia</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="6">6</span>
+          <span class="stat-label">Zonas metropolitanas atendidas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num" data-target="120">+120</span>
+          <span class="stat-label">Empresas e lojas parceiras activas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <div class="strip"><div class="wrap strip-inner"><p><strong>Não sabes se chegamos à tua zona?</strong> Indica o local de recolha e o destino. Confirmamos contigo se podemos fazer a entrega.</p><a href="#pedido">Indicar locais <span aria-hidden="true">↗</span></a></div></div>
 <section class="section" id="como-funciona"><div class="wrap">
  <div class="section-header"><p class="eyebrow orange">01 / Como funciona</p><div><h2 class="title">Simples de pedir. Claro de combinar.</h2><p class="lead">Diz-nos o que precisas. Antes de qualquer entrega, a B-Express confirma a possibilidade de atendimento e as condições do serviço.</p></div></div>
@@ -625,50 +699,122 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   <p class="coverage-note">A disponibilidade e o valor da entrega são confirmados antes de avançar.</p>
 </div></section>
 
-<!-- TESTEMUNHOS & PROVA SOCIAL -->
-<section class="section section-testi" id="testemunhos">
+<!-- TESTEMUNHOS & PROVA SOCIAL COM CAROUSEL INTERATIVO -->
+<section class="section section-testi" id="testemunhos" aria-label="Avaliações e testemunhos">
   <div class="wrap">
-    <div class="section-header">
-      <p class="eyebrow orange">04 / Clientes Satisfeitos</p>
-      <div>
-        <h2 class="title">Quem confia na B-Express em Luanda.</h2>
-        <p class="lead">Lojas online, empresas e clientes individuais contam diariamente com o nosso compromisso e rapidez.</p>
+    <div class="testi-header-row">
+      <div class="testi-header-copy">
+        <p class="eyebrow orange">04 / Clientes Satisfeitos</p>
+        <h2 class="title">Quem confia na B-Express todos os dias.</h2>
+        <p class="lead">De boutiques de moda e distribuidores de tecnologia a escritórios jurídicos e compras pessoais em Luanda.</p>
+      </div>
+      <div class="carousel-nav-controls" aria-label="Controlos do carrossel">
+        <button type="button" class="carousel-nav-btn prev" id="carouselPrev" aria-label="Testemunho anterior">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="carousel-pagination" id="carouselPagination" aria-label="Indicador de página">
+          <span class="carousel-dot active" data-index="0"></span>
+          <span class="carousel-dot" data-index="1"></span>
+          <span class="carousel-dot" data-index="2"></span>
+          <span class="carousel-dot" data-index="3"></span>
+        </div>
+        <button type="button" class="carousel-nav-btn next" id="carouselNext" aria-label="Próximo testemunho">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
-    <div class="testi-grid">
-      <article class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Deixei de ter preocupações com as entregas das clientes. A B-Express recolhe aqui no Kilamba e entrega com comprovativo assinado no WhatsApp. Recomendo sem hesitar!"</p>
-        <div class="testi-author-row">
-          <div class="testi-avatar">KL</div>
-          <div class="testi-info">
-            <strong>Kátia Lourenço</strong>
-            <span>Boutique BelaLu · Kilamba</span>
+
+    <!-- CAROUSEL TRACK -->
+    <div class="carousel-viewport" id="carouselViewport">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Slide 1 -->
+        <article class="testi-card-slide">
+          <div class="testi-card-inner">
+            <div class="testi-top-bar">
+              <div class="testi-stars-wrap">
+                <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+              <span class="testi-verified-pill">✓ Loja Verificada</span>
+            </div>
+            <p class="testi-quote">"Deixei de ter dores de cabeça com os envios para as clientes. A B-Express recolhe aqui no Kilamba e entrega <strong>no mesmo dia com comprovativo assinado no WhatsApp</strong>. Nenhuma entrega falhou!"</p>
+            <div class="testi-author-row">
+              <div class="testi-avatar" style="background:#c84814">KL</div>
+              <div class="testi-info">
+                <strong>Kátia Lourenço</strong>
+                <span>Boutique BelaLu · Kilamba (Bloco F)</span>
+                <small class="testi-sub-badge">Envios Diários de Moda & Acessórios</small>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Distribuímos equipamentos e material informático em Luanda. O estafeta chega sempre em menos de 40 minutos e os clientes recebem em segurança no mesmo dia."</p>
-        <div class="testi-author-row">
-          <div class="testi-avatar">MC</div>
-          <div class="testi-info">
-            <strong>Mauro Conceição</strong>
-            <span>TechAngola · Maianga</span>
+        </article>
+
+        <!-- Slide 2 -->
+        <article class="testi-card-slide">
+          <div class="testi-card-inner">
+            <div class="testi-top-bar">
+              <div class="testi-stars-wrap">
+                <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+              <span class="testi-verified-pill">✓ Conta Corporativa</span>
+            </div>
+            <p class="testi-quote">"Distribuímos peças delicadas e equipamentos informáticos urgentes. O estafeta chega sempre em <strong>menos de 35 minutos para a recolha</strong> e os clientes na Maianga e Talatona recebem impecável."</p>
+            <div class="testi-author-row">
+              <div class="testi-avatar" style="background:#10232c">MC</div>
+              <div class="testi-info">
+                <strong>Mauro Conceição</strong>
+                <span>TechAngola · Maianga & Mutamba</span>
+                <small class="testi-sub-badge">Distribuição B2B de Tecnologia</small>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Envio regular de processos jurídicos e documentação de empresas. Serviço discreto, pontual e com comunicação exemplar via WhatsApp."</p>
-        <div class="testi-author-row">
-          <div class="testi-avatar">AP</div>
-          <div class="testi-info">
-            <strong>Dra. Ana Paula Silva</strong>
-            <span>Advocacia · Talatona</span>
+        </article>
+
+        <!-- Slide 3 -->
+        <article class="testi-card-slide">
+          <div class="testi-card-inner">
+            <div class="testi-top-bar">
+              <div class="testi-stars-wrap">
+                <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+              <span class="testi-verified-pill">✓ Documentação Oficial</span>
+            </div>
+            <p class="testi-quote">"Para escritórios de advocacia, a confidencialidade e o horário são vitais. O estafeta da B-Express entregou processos no cartório na Baixa com <strong>recibo em mão em 45 minutos</strong>."</p>
+            <div class="testi-author-row">
+              <div class="testi-avatar" style="background:#0e4429">AP</div>
+              <div class="testi-info">
+                <strong>Dra. Ana Paula Silva</strong>
+                <span>Silva & Associados · Talatona</span>
+                <small class="testi-sub-badge">Envio Seguro de Documentos Oficiais</small>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+
+        <!-- Slide 4 -->
+        <article class="testi-card-slide">
+          <div class="testi-card-inner">
+            <div class="testi-top-bar">
+              <div class="testi-stars-wrap">
+                <span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span><span class="star-icon">★</span>
+                <span class="rating-num">5.0</span>
+              </div>
+              <span class="testi-verified-pill">✓ Saúde & Farmácia</span>
+            </div>
+            <p class="testi-quote">"Fazemos envios urgentes de produtos de dermocosmética e medicação sem receita para pacientes em toda a Grande Luanda. A rapidez de comunicação no WhatsApp faz toda a diferença."</p>
+            <div class="testi-author-row">
+              <div class="testi-avatar" style="background:#0369a1">ER</div>
+              <div class="testi-info">
+                <strong>Dr. Eduardo Ramos</strong>
+                <span>Farmácia VidaSaúde · Alvalade</span>
+                <small class="testi-sub-badge">Entregas Rápidas no Mesmo Dia</small>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -1289,6 +1435,124 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
       }
     }, { threshold: 0.3 });
     observer.observe(statsSection);
+  }
+
+
+  // ==========================================
+  // CARROSSEL INTERATIVO DE TESTEMUNHOS
+  // ==========================================
+  const track = document.getElementById('carouselTrack');
+  const viewport = document.getElementById('carouselViewport');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  const dots = document.querySelectorAll('.carousel-dot');
+  
+  if (track && viewport && prevBtn && nextBtn) {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.testi-card-slide');
+    const totalSlides = slides.length;
+    let autoInterval = null;
+
+    function getVisibleCount() {
+      if (window.innerWidth <= 720) return 1;
+      if (window.innerWidth <= 1100) return 2;
+      return 3;
+    }
+
+    function getMaxIndex() {
+      const visible = getVisibleCount();
+      return Math.max(0, totalSlides - visible);
+    }
+
+    function updateCarousel() {
+      const maxIdx = getMaxIndex();
+      if (currentIndex > maxIdx) currentIndex = maxIdx;
+      if (currentIndex < 0) currentIndex = 0;
+
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = 24;
+      const offset = currentIndex * (slideWidth + gap);
+      track.style.transform = `translateX(-${offset}px)`;
+
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentIndex);
+      });
+
+      prevBtn.style.opacity = currentIndex === 0 ? '0.4' : '1';
+      nextBtn.style.opacity = currentIndex >= maxIdx ? '0.4' : '1';
+    }
+
+    nextBtn.addEventListener('click', () => {
+      const maxIdx = getMaxIndex();
+      if (currentIndex < maxIdx) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // loop
+      }
+      updateCarousel();
+      resetAutoplay();
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = getMaxIndex(); // loop back
+      }
+      updateCarousel();
+      resetAutoplay();
+    });
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        currentIndex = Math.min(idx, getMaxIndex());
+        updateCarousel();
+        resetAutoplay();
+      });
+    });
+
+    window.addEventListener('resize', updateCarousel);
+
+    // Touch / Swipe
+    let startX = 0;
+    let isSwiping = false;
+
+    viewport.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isSwiping = true;
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', (e) => {
+      if (!isSwiping) return;
+      isSwiping = false;
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          nextBtn.click();
+        } else {
+          prevBtn.click();
+        }
+      }
+    });
+
+    // Autoplay with hover pause
+    function startAutoplay() {
+      autoInterval = setInterval(() => {
+        nextBtn.click();
+      }, 5500);
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoInterval);
+      startAutoplay();
+    }
+
+    viewport.addEventListener('mouseenter', () => clearInterval(autoInterval));
+    viewport.addEventListener('mouseleave', () => startAutoplay());
+
+    updateCarousel();
+    startAutoplay();
   }
 
 })();
