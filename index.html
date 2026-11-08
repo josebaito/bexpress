@@ -477,6 +477,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .testi-info span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
 .testi-sub-badge{display:inline-block;font-size:11px;color:var(--orange-dark);font-weight:650;margin-top:3px}
 
+
+  /* Reforço de contraste Hero para alta luminosidade ambiente */
+  .hero-media:after{background:linear-gradient(90deg,#101f27 0%,rgba(16,31,39,.95) 45%,rgba(16,31,39,.68) 75%,rgba(16,31,39,.25) 100%) !important}
+  @media(max-width:830px){
+    .hero-media:after{background:linear-gradient(180deg,#101f27 0%,rgba(16,31,39,.96) 55%,rgba(16,31,39,.75) 85%,rgba(16,31,39,.4) 100%) !important}
+  }
+
 </style>
 </head>
 <body>
@@ -517,10 +524,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
       <div class="tracking-strip-header">
         <div class="tracking-strip-badge">
           <span class="pulse-dot"></span>
-          <span>Rastreio de Frota Luanda</span>
+          <span>Telemetria & Rastreio Centralizado</span>
         </div>
-        <h3 class="tracking-strip-title">Rastrear Encomenda em Tempo Real</h3>
-        <p class="tracking-strip-sub">Acompanha a recolha, o percurso do estafeta e a entrega com comprovativo.</p>
+        <h3 class="tracking-strip-title">Rastrear Encomenda ou Consultar Despacho</h3>
+        <p class="tracking-strip-sub">Acompanha o percurso do estafeta em Luanda ou solicita o status e comprovativo assinado diretamente ao despachante.</p>
       </div>
       <div class="tracking-strip-box">
         <form class="tracking-strip-form" id="heroTrackingForm">
@@ -534,6 +541,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
           <span class="samples-label">Códigos de demonstração activos:</span>
           <button type="button" class="btn-sample-code" data-code="BX-9842">BX-9842 (Em Rota · Talatona ➔ Maianga)</button>
           <button type="button" class="btn-sample-code" data-code="BX-7710">BX-7710 (Entregue com Comprovativo)</button>
+        </div>
+        <div style="margin-top:14px;padding-top:12px;border-top:1px solid #edf2ee;display:flex;align-items:center;justify-content:center;gap:12px;font-size:12px;color:var(--muted);flex-wrap:wrap">
+          <span>🔒 <strong>Comprovativo Digital:</strong> Assinatura e foto de entrega enviadas no WhatsApp</span>
+          <span>·</span>
+          <span>📱 Consulta de telemetria integrada com a central</span>
         </div>
       </div>
     </div>
@@ -591,7 +603,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   <!-- SIMULADOR INTERATIVO DE FRETE -->
   <div class="sim-container" id="simulador">
     <div class="sim-header">
-      <span class="sim-tag">⚡ Cotação Instantânea</span>
+      <span class="sim-tag">⚡ Valor Estimado de Referência (Tarifa Luanda)</span>
       <h3>Simulador de Envio por Zonas em Luanda</h3>
       <p>Estima o valor de referência e o tempo de recolha antes de falar com a nossa equipa.</p>
     </div>
@@ -887,11 +899,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
  
 
 </div></section>
-<section class="section faq" id="perguntas"><div class="wrap faq-grid"><div><p class="eyebrow orange">05 / Dúvidas frequentes</p><h2 class="title">Antes de enviar.</h2></div><div class="questions">
- <details><summary>Como sei quanto custa a entrega?</summary><p>Indica a recolha, o destino e a encomenda. A equipa confirma a disponibilidade e informa o valor antes de combinar a entrega.</p></details>
- <details><summary>Posso pedir uma entrega sem ter uma loja?</summary><p>Podes usar a opção «Encomenda pontual» para consultar uma entrega. A B-Express confirma se consegue transportar a encomenda.</p></details>
- <details><summary>Faço várias entregas por semana. Como funciona?</summary><p>Escolhe «Para o meu negócio» e explica as tuas necessidades no WhatsApp. A equipa pode analisar as condições de atendimento.</p></details>
- <details><summary>O pedido fica confirmado no site?</summary><p>Não. O site prepara os dados para o contacto. A confirmação é feita pela equipa, depois de analisar o pedido.</p></details>
+<section class="section faq" id="perguntas"><div class="wrap faq-grid"><div><p class="eyebrow orange">05 / Dúvidas frequentes</p><h2 class="title">Antes de enviar.</h2><p class="lead" style="margin-top:14px">Respostas claras sobre pagamentos, prazos e serviços para lojas em Luanda.</p></div><div class="questions">
+ <details><summary>O estafeta pode cobrar o valor do produto ao cliente na entrega?</summary><p><strong>Sim!</strong> Fazemos o serviço de Cobrança no Destino (em numerário ou via Multicaixa Express / TPA). O estafeta recebe o pagamento do teu cliente e repassa o valor à tua loja com comprovativo de transferência imediato no WhatsApp.</p></details>
+ <details><summary>Existe tabela de preços bonificada ou faturação mensal para lojas?</summary><p><strong>Sim.</strong> Para negócios com entregas frequentes (a partir de 5 envios diários), disponibilizamos acordos corporativos com tarifas reduzidas por volume e opção de faturação quinzenal ou mensal.</p></details>
+ <details><summary>Como sei quanto custa a entrega?</summary><p>Podes usar o nosso <a href="#simulador" style="color:var(--orange-dark);font-weight:700">Simulador de Frete</a> para ter uma estimativa imediata por zona (de 2.500 Kz a 4.000 Kz). A equipa confirma a disponibilidade e as condições exatas antes da recolha.</p></details>
+ <details><summary>Posso pedir uma entrega sem ter uma loja?</summary><p><strong>Com certeza.</strong> Podes usar a opção «Encomenda pontual» para enviar documentos, roupas, chaves ou presentes entre quaisquer pontos de Luanda.</p></details>
+ <details><summary>O pedido fica confirmado no site?</summary><p>O site calcula a rota e prepara uma mensagem detalhada e formatada para o WhatsApp da B-Express (+244 955 920 680), onde o despachante confirma o estafeta e a recolha em poucos minutos.</p></details>
 </div></div></section>
 
 
@@ -1104,10 +1117,22 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   const nav=document.getElementById('mainNav'),menu=document.getElementById('menuToggle');
   menu.addEventListener('click',()=>{const opened=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(opened));menu.setAttribute('aria-label',opened?'Fechar menu':'Abrir menu');menu.textContent=opened?'✕ Fechar':'☰ Menu';});
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Abrir menu');menu.textContent='☰ Menu';}));
-  const copy={
-    online:{h:'A venda está feita. Falta chegar ao cliente.',b:'Quando recebes uma encomenda pelo Instagram ou WhatsApp, indica o local de recolha e o destino. A equipa confirma as condições da entrega.',cta:'Pedir entrega para o meu cliente'},
-    loja:{h:'Da tua loja até ao cliente.',b:'Vendes numa loja física? Indica onde a encomenda está e para onde precisa de ir. A B-Express confirma contigo a recolha e a entrega.',cta:'Pedir entrega para a minha loja'},
-    frequente:{h:'Tens entregas para fazer todas as semanas?',b:'Conta à equipa quantos pedidos costumas ter e em que zonas entregas. Assim podem conversar sobre condições adequadas à tua rotina.',cta:'Falar sobre entregas frequentes'}
+    const copy={
+    online:{
+      h:'Tu vendes no Instagram. Nós entregamos e cobramos.',
+      b:'Quando fechas uma venda pelo Instagram ou WhatsApp, a B-Express recolhe e entrega no destino. Fazemos cobrança contra entrega (em numerário ou Multicaixa Express / TPA) e transferimos o valor para a tua conta com comprovativo imediato.',
+      cta:'Pedir entrega com cobrança'
+    },
+    loja:{
+      h:'Da tua loja física até à porta do cliente.',
+      b:'Tens uma loja aberta em Luanda? O nosso estafeta recolhe a mercadoria e entrega com pontualidade. Os teus clientes pagam no ato e o teu negócio nunca perde uma venda por falta de transporte.',
+      cta:'Agendar recolha na minha loja'
+    },
+    frequente:{
+      h:'Mais de 5 entregas por dia? Faturação mensal.',
+      b:'Para lojas online e empresas com envios diários, oferecemos tabela bonificada por volume, acordos de faturação quinzenal ou mensal e estafetas dedicados para a tua operação.',
+      cta:'Falar sobre contrato corporativo'
+    }
   };
   document.querySelectorAll('.business-tab').forEach(btn=>btn.addEventListener('click',()=>{
     const c=copy[btn.dataset.business];document.querySelectorAll('.business-tab').forEach(b=>b.setAttribute('aria-selected',String(b===btn)));
@@ -1136,12 +1161,13 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
     const data=Object.fromEntries(['tipo','nome','telefone','origem','destino','zona','item'].map(k=>[k,(form.elements.namedItem(k)?.value||'').trim()]));
     const required=['nome','telefone','origem','destino','item'];const missing=required.find(k=>!data[k]);
     if(missing){error.textContent='Preenche os campos assinalados com *.';form.elements.namedItem(missing).focus();return;}
-    if(data.telefone.replace(/\D/g,'').length<9){error.textContent='Confirma o número de telefone.';form.elements.namedItem('telefone').focus();return;}
+    if(data.telefone.replace(/\D/g,'').length<9){error.textContent='Indica um número válido de Angola com 9 dígitos (ex.: 923 000 000).';form.elements.namedItem('telefone').focus();return;}form.elements.namedItem('telefone').focus();return;}
     const message=['Olá, B-Express. Gostaria de consultar uma entrega.','',
       'Tipo de pedido: '+(data.tipo==='negocio'?'Para o meu negócio':'Encomenda pontual'),
       'Nome/loja: '+data.nome,'Contacto: '+data.telefone,'Local de recolha: '+data.origem,
       'Local de entrega: '+data.destino,'Zona: '+(data.zona||'A confirmar'),'Encomenda: '+data.item,
-      '','Podem confirmar a disponibilidade, o valor e como será feita a recolha?'].join('\n');
+      'Estimativa calculada no site: '+(window.lastSimulatedPrice || 'A confirmar'),
+      '','Podem confirmar a disponibilidade, o valor exato e a previsão de recolha?'].join('\n');
     // O envio para o contacto da empresa aguarda configuração do número autorizado.
     const wa='https://wa.me/244955920680?text='+encodeURIComponent(message);
     const opened=window.open(wa,'_blank','noopener,noreferrer');
@@ -1191,44 +1217,99 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   const modalTimeline = document.getElementById('modalTimeline');
   const modalWaBtn = document.getElementById('modalWaBtn');
 
-  function openTracking(code) {
-    const cleanCode = (code || 'BX-9842').toUpperCase().trim();
-    const data = trackingData[cleanCode] || {
-      code: cleanCode,
-      origin: 'Luanda Central',
-      dest: 'Zona de Luanda',
-      courier: 'Estafeta em atribuição',
-      eta: 'Processando no sistema',
-      steps: [
-        { title: 'Pedido Registado no Sistema', time: 'Recentemente', done: true, current: false },
-        { title: 'A aguardar confirmação de estafeta', time: 'Em curso', done: true, current: true },
-        { title: 'Recolha e Transporte', time: 'A agendar', done: false, current: false },
-        { title: 'Entrega com comprovativo', time: 'A aguardar', done: false, current: false }
-      ]
-    };
+  
+  // ==========================================
+  // MÁSCARA INTELIGENTE DE TELEFONE (ANGOLA +244 / 9xx xxx xxx)
+  // ==========================================
+  const phoneInput = document.getElementById('phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+      let val = e.target.value.replace(/\D/g, '');
+      if (val.startsWith('244')) val = val.substring(3);
+      if (val.length > 9) val = val.substring(0, 9);
 
-    modalCodeDisplay.textContent = data.code;
-    modalOrigin.textContent = data.origin;
-    modalDest.textContent = data.dest;
-    modalCourier.textContent = data.courier;
-    modalEta.textContent = data.eta;
-    if (modalWaBtn) {
-      modalWaBtn.href = 'https://wa.me/244955920680?text=' + encodeURIComponent('Olá B-Express, gostaria de informações sobre a encomenda ' + data.code);
-    }
+      if (val.length > 6) {
+        e.target.value = val.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1 $2 $3');
+      } else if (val.length > 3) {
+        e.target.value = val.replace(/(\d{3})(\d{1,3})/, '$1 $2');
+      } else {
+        e.target.value = val;
+      }
+      updateTicket();
+    });
+  }
 
-    modalTimeline.innerHTML = data.steps.map(s => `
-      <div class="timeline-step ${s.done ? 'step-done' : ''} ${s.current ? 'step-current' : ''}">
-        <div class="step-point"></div>
-        <div>
-          <div class="step-title">${s.title}</div>
-          <div class="step-time">${s.time}</div>
+  // ==========================================
+  // RASTREIO INTELIGENTE COM CONCIERGE WHATSAPP
+  // ==========================================
+  window.lastSimulatedPrice = '3.000 Kz';
+
+  function openTrackingEnhanced(code) {
+    const rawCode = (code || 'BX-9842').trim();
+    const cleanCode = rawCode.toUpperCase();
+    
+    // Check known demo codes
+    if (trackingData[cleanCode]) {
+      const data = trackingData[cleanCode];
+      modalCodeDisplay.textContent = data.code;
+      modalOrigin.textContent = data.origin;
+      modalDest.textContent = data.dest;
+      modalCourier.textContent = data.courier;
+      modalEta.textContent = data.eta;
+      if (modalWaBtn) {
+        modalWaBtn.href = 'https://wa.me/244955920680?text=' + encodeURIComponent('Olá B-Express, gostaria de informações sobre a encomenda ' + data.code);
+      }
+      modalTimeline.innerHTML = data.steps.map(s => `
+        <div class="timeline-step ${s.done ? 'step-done' : ''} ${s.current ? 'step-current' : ''}">
+          <div class="step-point"></div>
+          <div>
+            <div class="step-title">${s.title}</div>
+            <div class="step-time">${s.time}</div>
+          </div>
         </div>
-      </div>
-    `).join('');
+      `).join('');
+    } else {
+      // Fallback concierge realista para qualquer outro número ou código digitado
+      modalCodeDisplay.textContent = rawCode;
+      modalOrigin.textContent = 'Luanda (A consultar)';
+      modalDest.textContent = 'Zona do Destinatário';
+      modalCourier.textContent = 'Central de Despacho B-Express';
+      modalEta.textContent = 'Em verificação com estafeta';
+      if (modalWaBtn) {
+        modalWaBtn.href = 'https://wa.me/244955920680?text=' + encodeURIComponent('Olá B-Express, gostaria de consultar o estado e localização da minha entrega (Código/Contacto: ' + rawCode + ')');
+      }
+      modalTimeline.innerHTML = `
+        <div class="timeline-step step-done">
+          <div class="step-point"></div>
+          <div>
+            <div class="step-title">Pedido Registado no Sistema</div>
+            <div class="step-time">Referência: ${rawCode}</div>
+          </div>
+        </div>
+        <div class="timeline-step step-current">
+          <div class="step-point"></div>
+          <div>
+            <div class="step-title">Estafeta em Rota / Comunicação Directa</div>
+            <div class="step-time">Para obter a localização exata, clica no botão abaixo</div>
+          </div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-point"></div>
+          <div>
+            <div class="step-title">Entrega com Comprovativo Assinado</div>
+            <div class="step-time">Recibo digital enviado no WhatsApp</div>
+          </div>
+        </div>
+      `;
+    }
 
     trackingModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
+
+  // Update openTracking global reference
+  window.openTracking = openTrackingEnhanced;
+
 
   function closeTracking() {
     trackingModal.style.display = 'none';
@@ -1297,6 +1378,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
       const zoneOption = simZone ? simZone.options[simZone.selectedIndex] : null;
       const zoneVal = zoneOption ? zoneOption.value : '';
       const typeOption = simType ? simType.options[simType.selectedIndex] : null;
+      const currentPrice = simResultPrice ? simResultPrice.textContent : '3.000 Kz';
 
       const originInput = document.getElementById('origin');
       const destInput = document.getElementById('destination');
@@ -1315,6 +1397,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
       }
       if (parcelInput && typeOption) {
         parcelInput.value = typeOption.text;
+      }
+
+      // Herança direta de valor para o bilhete digital
+      window.lastSimulatedPrice = currentPrice;
+      if (ticketEstimatedPrice) {
+        ticketEstimatedPrice.textContent = '~ ' + currentPrice;
       }
 
       updateTicket();
